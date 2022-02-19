@@ -1,0 +1,48 @@
+<div class="header">
+    <nav class="container-fluid py-2 px-4">
+
+        <div>
+            <ul class="d-flex justify-content-between mb-0 align-items-center pl-0">
+
+                <div class="d-flex align-items-center">
+                    <div class="logo mr-3">
+                        <img src="../../assets/logo.png">
+                    </div>
+                    <div>
+                    <li class="text-light text-decoration-none list-unstyled font-opan-sans">Home</li>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="position-relative">
+                        <li class="text-light mr-2 text-decoration-none list-unstyled"><a routerLink="/my-status"   routerLinkActive="active-nav"  class="px-4 font-opan-sans opacity-75 my-status">My Status</a></li>
+                    </div>
+                    <div class="position-relative">
+                        <li class="text-light text-decoration-none list-unstyled px-4"><a routerLink="/my-teams" routerLinkActive="active-nav" class="px-4 font-opan-sans opacity-75 my-status">My Teams</a></li>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <li class="text-light text-decoration-none list-unstyled"><img src="../../assets/Avatar.png"></li>
+                    <div class="row">
+                        <div class="col">
+                          <div ngbDropdown class="d-inline-block">
+                            <button
+                              class="btn btn-white shadow-none"
+                              id="dropdownBasic1"
+                              ngbDropdownToggle
+                            ></button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                              <button ngbDropdownItem>Profile</button>
+                              <button ngbDropdownItem>Edit Profile</button>
+                              <button ngbDropdownItem>Logout</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </ul>
+        </div>
+
+
+    </nav>
+
+</div>

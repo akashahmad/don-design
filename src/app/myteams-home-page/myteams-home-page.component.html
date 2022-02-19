@@ -1,0 +1,1202 @@
+<div class="container pt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="colloumn-1 pl-0">
+            <h3 class="pb-2 pl-1 dark-gray font-opan-sans text-center font-weight-600">Select Date</h3>
+            <div class="card-1 border border-white bg-white p-4">
+                <div class="d-flex justify-content-between pb-2">
+                    <h4 class="fw-700 font-opan-sans">Select Week</h4>
+
+                    <button class="p-0 btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button">
+                        <img class="select-box calender-box" src="../../assets/percentage.svg">
+                    </button>
+
+                </div>
+                <div>
+                <form class="row row-cols-sm-auto">
+                    <div class="col-12 pl-0 pr-0">
+                        <div class="dp-hidden position-absolute">
+                            <div class="input-group">
+                                <input name="datepicker" class="form-control" ngbDatepicker
+                                    #datepicker="ngbDatepicker" [autoClose]="'outside'"
+                                    (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
+                                    outsideDays="hidden" [startDate]="fromDate!" tabindex="-1" />
+                                <ng-template #t let-date let-focused="focused">
+                                    <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                                        [class.faded]="isHovered(date) || isInside(date)"
+                                        (mouseenter)="hoveredDate = date" (mouseleave)="hoveredDate = null">
+                                        {{ date.day }}
+                                    </span>
+                                </ng-template>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input #dpFromDate class="form-control" placeholder="dd/mm/yyyy" name="dpFromDate"
+                                [value]="formatter.format(fromDate)"
+                                (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
+                                style="border: transparent !important;" />
+                            <input #dpToDate class="form-control" placeholder="dd/mm/yyyy" name="dpToDate"
+                                [value]="formatter.format(toDate)"
+                                (input)="toDate = validateInput(toDate, dpToDate.value)"
+                                style="border: transparent !important; text-align: end;" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="container pt-5 cards-px px-0 pb-5">
+    <div class="card-1 card-w border border-white bg-white py-4 py-lg-2 px-4 d-flex flex-column flex-lg-row">
+        <div class="mr-5 w-60 d-flex align-items-center justify-content-between flex-lg-row flex-column">
+            <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3>
+            <img class="w-90px py-2 py-lg-0" src="../../assets/reddressgirl.png">
+            <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+            <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+        </div>
+        <div class="w-40 d-flex align-items-center justify-content-between pl-2 pl-lg-5 border-start  border-2">
+            <!-- <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3> -->
+            <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+            <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+            <div class="row">
+                <div class="col">
+                    <div ngbDropdown class="down-caret py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                        <button class="dropdown-toggle btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle onclick="displayBlock(`listing-wrapper`)"></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="listing-wrapper">
+    <div id="listing-inner">
+    <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-4 px-4">
+        <div>
+            <h4 class="pl-2 dark-gray pb-1 font-opan-sans fw-700">Tasks for this Period</h4>
+
+            <p id="loadingImage1BORDER" onclick="showImage('loadingImage1','loadingImage1BORDER')"
+                class="task-list cursor-pointer border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                Create and run performace tests against the admin pages<span id="loadingImage1" class="delete-icone"
+                    style="display: none;"><img src="../../assets/delete-icone.png" onclick="deleteRow('loadingImage1BORDER')"></span></p>
+
+            <p id="loadingImage1BORDER2" onclick="showImage('loadingImage2','loadingImage1BORDER2')"
+                class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100  bg-white d-flex justify-content-between">
+                Send info to designer
+                for application UX<span id="loadingImage2" class="cursor-pointer delete-icone"
+                    style="display: none;"><img onclick="deleteRow('loadingImage1BORDER2')" src="../../assets/delete-icone.png"></span></p>
+            <p id="loadingImage1BORDER3" onclick="showImage('loadingImage3','loadingImage1BORDER3')"
+                class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                Follow up with legal on privacy and data retention policies<span id="loadingImage3"
+                    class=" delete-icone" style="display: none;"><img onclick="deleteRow('loadingImage1BORDER3')" src="../../assets/delete-icone.png"></span></p>
+            <h4 class="pl-2 pt-1 dark-gray font-opan-sans fw-700">Risks</h4>
+
+            <p id="loadingImage1BORDER4" onclick="showImage('loadingImage4','loadingImage1BORDER4')"
+                class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                No risk this week <span id="loadingImage4" class=" delete-icone" style="display: none;"><img
+                        src="../../assets/delete-icone.png"></span></p>
+
+        </div>
+
+    </div>
+
+    <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-5 px-4">
+
+        <div class="d-flex flex-column flex-lg-row">
+            <div class="w-48 pr-0 pr-lg-4">
+                <h4 class="pl-2 dark-gray font-opan-sans fw-700">Task for the week of Jan 23, 2022 - Jan 29, 2022</h4>
+                <div class="d-flex mt-4 justify-content-between">
+                    <p
+                        class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                        Write designes for the value page</p>
+                    <!-- <div class="d-flex align-items-center"> -->
+                    <!-- Default switch -->
+                    <!-- <label class="switch mb-0">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                          </label> -->
+                    <!-- </div> -->
+                </div>
+                <div class="d-flex mt-4 justify-content-between">
+                    <p
+                        class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                        Create requests for UX desginer</p>
+                    <!-- <div class="d-flex align-items-center"> -->
+                    <!-- Default switch -->
+                    <!-- <label class="switch mb-0">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                    </div> -->
+                </div>
+                <div class="d-flex mt-4 justify-content-between">
+                    <p
+                        class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                        Brainstorm on product name</p>
+                    <!-- <div class="d-flex align-items-center"> -->
+                    <!-- Default switch -->
+                    <!-- <label class="switch mb-0">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                          </label>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="w-55 pl-4 border-start border-2 mt-5 mt-lg-0">
+                <div class="d-flex justify-content-between">
+                    <h4 class="dark-gray font-opan-sans fw-700">Overview of this Week</h4>
+                    <h4 class="pr-0 pr-lg-3 dark-gray">Status : <span class="pl-1"><img src="../../assets/5lines.png"></span>
+                    </h4>
+                </div>
+                <div class="d-flex mt-3 position-relative" onclick="showImage('loadingImage5','loadingImage1BORDER5')">
+                    <h6 class="pt-3 dark-gray">Ups</h6>
+                    <p id="loadingImage1BORDER5"
+                        class="border-transpairent paragrharph-color w-100 py-2 fs-15 pl-4 pr-44 ml-4 hover-border border-rounded-14 mb-12 font-weight-500 custom-shadow">
+                        Risks
+                        have been added to the app and If there will be a huge
+                        String then this box (input field)will increase their size as we
+                        have made this now or If there will be small string as all then
+                        the size will be standard as remaining fields.</p>
+                    <img id="loadingImage5" class=" delete-icone" style="display: none;"
+                        src="../../assets/delete-icone.png" class="position-absolute del-icon cursor-pointer">
+
+
+                </div>
+                <div class="position-relative d-flex mt-10 align-items-center"
+                    onclick="showImage('loadingImage8','loadingImage1BORDER8')">
+                    <h6 class="letter-spacing-1 mb-0 dark-gray">Down</h6>
+                    <p id="loadingImage1BORDER8"
+                        class="ml-2 border-transpairent ml-11 cursor-pointer paragrharph-color fs-15 hover-border w-100 py-3 px-4 border-rounded-14 custom-shadow mb-0">
+                        Registration appears to be broken</p>
+                    <img id="loadingImage8" class=" delete-icone" style="display: none;"
+                        src="../../assets/delete-icone.png" class="position-absolute del-icons cursor-pointer">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</div>
+    <div class="">
+        <div class="py-5 d-flex justify-content-center">
+        <img class="w-935" src="../../assets/Line 33.png">
+        </div>
+     
+        <div class="card-1 card-w border border-white bg-white  py-4 py-lg-2 px-4 d-flex flex-column flex-lg-row">
+            <div class="mr-5 w-60 d-flex align-items-center justify-content-between flex-lg-row flex-column">
+                <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3>
+                <img class="py-2 py-lg-0 w-90px" src="../../assets/reddressgirl.png">
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+                <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+            </div>
+            <div class="w-40 d-flex align-items-center justify-content-between pl-2 pl-lg-5 border-start border-2">
+                <!-- <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3> -->
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+            <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+                <div class="row">
+                    <div class="col">
+                        <div ngbDropdown class="py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                            <button class="dropdown-toggle btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle onclick="displayBlock(`listing-wrapper2`)"></button>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="listing-wrapper2">
+        <div id="listing-inner">
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-4 px-4">
+            <div>
+                <h4 class="pl-2 dark-gray pb-1 font-opan-sans fw-700">Tasks for this Period</h4>
+    
+                <p id="loadingImage1BORDER11" onclick="showImage('loadingImage11','loadingImage1BORDER11')"
+                    class="task-list cursor-pointer border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Create and run performace tests against the admin pages<span id="loadingImage11" class="delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+    
+                <p id="loadingImage1BORDER12" onclick="showImage('loadingImage12','loadingImage1BORDER12')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100  bg-white d-flex justify-content-between">
+                    Send info to designer
+                    for application UX<span id="loadingImage12" class="cursor-pointer delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <p id="loadingImage1BORDER13" onclick="showImage('loadingImage13','loadingImage1BORDER13')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Follow up with legal on privacy and data retention policies<span id="loadingImage13"
+                        class=" delete-icone" style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <h4 class="pl-2 pt-1 dark-gray font-opan-sans fw-700">Risks</h4>
+    
+                <p id="loadingImage1BORDER14" onclick="showImage('loadingImage14','loadingImage1BORDER14')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    No risk this week <span id="loadingImage14" class=" delete-icone" style="display: none;"><img
+                            src="../../assets/delete-icone.png"></span></p>
+    
+            </div>
+    
+        </div>
+    
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-5 px-4">
+    
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-48 pr-0 pr-lg-4">
+                    <h4 class="pl-2 dark-gray font-opan-sans fw-700">Task for the week of Jan 23, 2022 - Jan 29, 2022</h4>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Write designes for the value page</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Create requests for UX desginer</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Brainstorm on product name</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                </div>
+    
+                <div class="w-55 pl-4 border-start  border-2 mt-5 mt-lg-0">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="dark-gray font-opan-sans fw-700">Overview of this Week</h4>
+                        <h4 class="pr-0 pr-lg-3 dark-gray">Status : <span class="pl-1"><img src="../../assets/5lines.png"></span>
+                        </h4>
+                    </div>
+                    <div class="d-flex mt-3 position-relative" onclick="showImage('loadingImage22','loadingImage1BORDER22')">
+                        <h6 class="pt-3 dark-gray">Ups</h6>
+                        <p id="loadingImage1BORDER22"
+                            class=" border-transpairent paragrharph-color w-100 py-2 fs-15 pl-4 pr-44 ml-4 hover-border border-rounded-14 mb-12 font-weight-500 custom-shadow">
+                            Risks
+                            have been added to the app and If there will be a huge
+                            String then this box (input field)will increase their size as we
+                            have made this now or If there will be small string as all then
+                            the size will be standard as remaining fields.</p>
+                        <img id="loadingImage22" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icon cursor-pointer">
+    
+    
+                    </div>
+                    <div class="position-relative d-flex mt-10 align-items-center"
+                        onclick="showImage('loadingImage21','loadingImage1BORDER21')">
+                        <h6 class="letter-spacing-1 mb-0 dark-gray">Down</h6>
+                        <p id="loadingImage1BORDER21"
+                            class="ml-2 border-transpairent ml-11 cursor-pointer paragrharph-color fs-15 hover-border w-100 py-3 px-4 border-rounded-14 custom-shadow mb-0">
+                            Registration appears to be broken</p>
+                        <img id="loadingImage21" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icons cursor-pointer">
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+    </div>
+
+    <div class="">
+        <div class="py-5 d-flex justify-content-center">
+        <img class="w-935" src="../../assets/Line 33.png">
+        </div>
+     
+        <div class="card-1 card-w border border-white bg-white py-4 py-lg-2 px-4 d-flex flex-column flex-lg-row">
+            <div class="mr-5 w-60 d-flex align-items-center justify-content-between flex-lg-row flex-column">
+                <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3>
+                <img class="py-2 py-lg-0 w-90px" src="../../assets/reddressgirl.png">
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+                <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+            </div>
+            <div class="w-40 d-flex align-items-center justify-content-between pl-2 pl-lg-5 border-start  border-2">
+                <!-- <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3> -->
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+                <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+                <div class="row">
+                    <div class="col">
+                        <div ngbDropdown class="py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                            <button class="dropdown-toggle btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle onclick="displayBlock(`listing-wrapper3`)"></button>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="listing-wrapper3">
+        <div id="listing-inner">
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-4 px-4">
+            <div>
+                <h4 class="pl-2 dark-gray pb-1 font-opan-sans fw-700">Tasks for this Period</h4>
+    
+                <p id="loadingImage1BORDER31" onclick="showImage('loadingImage31','loadingImage1BORDER31')"
+                    class="task-list cursor-pointer border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Create and run performace tests against the admin pages<span id="loadingImage31" class="delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+    
+                <p id="loadingImage1BORDER32" onclick="showImage('loadingImage32','loadingImage1BORDER32')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100  bg-white d-flex justify-content-between">
+                    Send info to designer
+                    for application UX<span id="loadingImage32" class="cursor-pointer delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <p id="loadingImage1BORDER33" onclick="showImage('loadingImage33','loadingImage1BORDER33')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Follow up with legal on privacy and data retention policies<span id="loadingImage33"
+                        class=" delete-icone" style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <h4 class="pl-2 pt-1 dark-gray font-opan-sans fw-700">Risks</h4>
+    
+                <p id="loadingImage1BORDER34" onclick="showImage('loadingImage34','loadingImage1BORDER34')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    No risk this week <span id="loadingImage34" class=" delete-icone" style="display: none;"><img
+                            src="../../assets/delete-icone.png"></span></p>
+    
+            </div>
+    
+        </div>
+    
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-5 px-4">
+    
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-48 pr-0 pr-lg-4">
+                    <h4 class="pl-2 dark-gray font-opan-sans fw-700">Task for the week of Jan 23, 2022 - Jan 29, 2022</h4>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Write designes for the value page</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Create requests for UX desginer</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Brainstorm on product name</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                </div>
+    
+                <div class="w-55 pl-4 border-start border-2 mt-5 mt-lg-0">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="dark-gray font-opan-sans fw-700">Overview of this Week</h4>
+                        <h4 class="pr-0 pr-lg-3 dark-gray">Status : <span class="pl-1"><img src="../../assets/5lines.png"></span>
+                        </h4>
+                    </div>
+                    <div class="d-flex mt-3 position-relative" onclick="showImage('loadingImage35','loadingImage1BORDER35')">
+                        <h6 class="pt-3 dark-gray">Ups</h6>
+                        <p id="loadingImage1BORDER35"
+                            class=" border-transpairent paragrharph-color w-100 py-2 fs-15 pl-4 pr-44 ml-4 hover-border border-rounded-14 mb-12 font-weight-500 custom-shadow">
+                            Risks
+                            have been added to the app and If there will be a huge
+                            String then this box (input field)will increase their size as we
+                            have made this now or If there will be small string as all then
+                            the size will be standard as remaining fields.</p>
+                        <img id="loadingImage35" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icon cursor-pointer">
+    
+    
+                    </div>
+                    <div class="position-relative d-flex mt-10 align-items-center"
+                        onclick="showImage('loadingImage38','loadingImage1BORDER38')">
+                        <h6 class="letter-spacing-1 mb-0 dark-gray">Down</h6>
+                        <p id="loadingImage1BORDER38"
+                            class="ml-2 border-transpairent ml-11 cursor-pointer paragrharph-color fs-15 hover-border w-100 py-3 px-4 border-rounded-14 custom-shadow mb-0">
+                            Registration appears to be broken</p>
+                        <img id="loadingImage38" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icons cursor-pointer">
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+    </div>
+
+    <div class="">
+        <div class="py-5 d-flex justify-content-center">
+        <img class="w-935" src="../../assets/Line 33.png">
+        </div>
+     
+        <div class="card-1 card-w border border-white bg-white py-4 py-lg-2 px-4 d-flex flex-column flex-lg-row">
+            <div class="mr-5 w-60 d-flex align-items-center justify-content-between flex-lg-row flex-column">
+                <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3>
+                <img class="py-2 py-lg-0 w-90px" src="../../assets/reddressgirl.png">
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+                <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+            </div>
+            <div class="w-40 d-flex align-items-center justify-content-between pl-2 pl-lg-5 border-start  border-2">
+                <!-- <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3> -->
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+                <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+                <div class="row">
+                    <div class="col">
+                        <!-- <div ngbDropdown class="py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                            <button class="btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle></button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem>Profile</button>
+                                <button ngbDropdownItem>Edit Profile</button>
+                                <button ngbDropdownItem>Logout</button>
+                            </div>
+                        </div> -->
+                        <div ngbDropdown class="py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                            <button class="dropdown-toggle btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle onclick="displayBlock(`listing-wrapper4`)"></button>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="listing-wrapper4">
+        <div id="listing-inner">
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-4 px-4">
+            <div>
+                <h4 class="pl-2 dark-gray pb-1 font-opan-sans fw-700">Tasks for this Period</h4>
+    
+                <p id="loadingImage1BORDER41" onclick="showImage('loadingImage41','loadingImage1BORDER41')"
+                    class="task-list cursor-pointer border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Create and run performace tests against the admin pages<span id="loadingImage41" class="delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+    
+                <p id="loadingImage1BORDER42" onclick="showImage('loadingImage42','loadingImage1BORDER42')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100  bg-white d-flex justify-content-between">
+                    Send info to designer
+                    for application UX<span id="loadingImage42" class="cursor-pointer delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <p id="loadingImage1BORDER43" onclick="showImage('loadingImage43','loadingImage1BORDER43')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Follow up with legal on privacy and data retention policies<span id="loadingImage43"
+                        class=" delete-icone" style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <h4 class="pl-2 pt-1 dark-gray font-opan-sans fw-700">Risks</h4>
+    
+                <p id="loadingImage1BORDER44" onclick="showImage('loadingImage44','loadingImage1BORDER44')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    No risk this week <span id="loadingImage44" class=" delete-icone" style="display: none;"><img
+                            src="../../assets/delete-icone.png"></span></p>
+    
+            </div>
+    
+        </div>
+    
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-5 px-4">
+    
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-48 pr-0 pr-lg-4">
+                    <h4 class="pl-2 dark-gray font-opan-sans fw-700">Task for the week of Jan 23, 2022 - Jan 29, 2022</h4>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Write designes for the value page</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Create requests for UX desginer</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Brainstorm on product name</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                </div>
+    
+                <div class="w-55 pl-4 border-start  border-2 mt-5 mt-lg-0">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="dark-gray font-opan-sans fw-700">Overview of this Week</h4>
+                        <h4 class="pr-0 pr-lg-3 dark-gray">Status : <span class="pl-1"><img src="../../assets/5lines.png"></span>
+                        </h4>
+                    </div>
+                    <div class="d-flex mt-3 position-relative" onclick="showImage('loadingImage45','loadingImage1BORDER45')">
+                        <h6 class="pt-3 dark-gray">Ups</h6>
+                        <p id="loadingImage1BORDER45"
+                            class=" border-transpairent paragrharph-color w-100 py-2 fs-15 pl-4 pr-44 ml-4 hover-border border-rounded-14 mb-12 font-weight-500 custom-shadow">
+                            Risks
+                            have been added to the app and If there will be a huge
+                            String then this box (input field)will increase their size as we
+                            have made this now or If there will be small string as all then
+                            the size will be standard as remaining fields.</p>
+                        <img id="loadingImage45" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icon cursor-pointer">
+    
+    
+                    </div>
+                    <div class="position-relative d-flex mt-10 align-items-center"
+                        onclick="showImage('loadingImage48','loadingImage1BORDER48')">
+                        <h6 class="letter-spacing-1 mb-0 dark-gray">Down</h6>
+                        <p id="loadingImage1BORDER48"
+                            class="ml-2 border-transpairent ml-11 cursor-pointer paragrharph-color fs-15 hover-border w-100 py-3 px-4 border-rounded-14 custom-shadow mb-0">
+                            Registration appears to be broken</p>
+                        <img id="loadingImage48" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icons cursor-pointer">
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+    </div>
+
+    <div class="">
+        <div class="py-5 d-flex justify-content-center">
+        <img class="w-935" src="../../assets/Line 33.png">
+        </div>
+     
+        <div class="card-1 card-w border border-white bg-white py-4 py-lg-2 px-4 d-flex flex-column flex-lg-row">
+            <div class="mr-5 w-60 d-flex align-items-center justify-content-between flex-lg-row flex-column">
+                <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3>
+                <img class="py-2 py-lg-0 w-90px" src="../../assets/reddressgirl.png">
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+                <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+            </div>
+            <div class="w-40 d-flex align-items-center justify-content-between pl-2 pl-lg-5 border-start  border-2">
+                <!-- <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3> -->
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+                <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+                <div class="row">
+                    <div class="col">
+                        <!-- <div ngbDropdown class="py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                            <button class="btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle></button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem>Profile</button>
+                                <button ngbDropdownItem>Edit Profile</button>
+                                <button ngbDropdownItem>Logout</button>
+                            </div>
+                        </div> -->
+                        <div ngbDropdown class="py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                            <button class="dropdown-toggle btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle onclick="displayBlock(`listing-wrapper5`)"></button>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="listing-wrapper5">
+        <div id="listing-inner">
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-4 px-4">
+            <div>
+                <h4 class="pl-2 dark-gray pb-1 font-opan-sans fw-700">Tasks for this Period</h4>
+    
+                <p id="loadingImage1BORDER51" onclick="showImage('loadingImage51','loadingImage1BORDER51')"
+                    class="task-list cursor-pointer border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Create and run performace tests against the admin pages<span id="loadingImage51" class="delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+    
+                <p id="loadingImage1BORDER52" onclick="showImage('loadingImage52','loadingImage1BORDER52')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100  bg-white d-flex justify-content-between">
+                    Send info to designer
+                    for application UX<span id="loadingImage52" class="cursor-pointer delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <p id="loadingImage1BORDER53" onclick="showImage('loadingImage53','loadingImage1BORDER53')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Follow up with legal on privacy and data retention policies<span id="loadingImage53"
+                        class=" delete-icone" style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <h4 class="pl-2 pt-1 dark-gray font-opan-sans fw-700">Risks</h4>
+    
+                <p id="loadingImage1BORDER54" onclick="showImage('loadingImage54','loadingImage1BORDER54')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    No risk this week <span id="loadingImage54" class=" delete-icone" style="display: none;"><img
+                            src="../../assets/delete-icone.png"></span></p>
+    
+            </div>
+    
+        </div>
+    
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-5 px-4">
+    
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-48 pr-0 pr-lg-4">
+                    <h4 class="pl-2 dark-gray font-opan-sans fw-700">Task for the week of Jan 23, 2022 - Jan 29, 2022</h4>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Write designes for the value page</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Create requests for UX desginer</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Brainstorm on product name</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                </div>
+    
+                <div class="w-55 pl-4 border-start  border-2 mt-5 mt-lg-0">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="dark-gray font-opan-sans fw-700">Overview of this Week</h4>
+                        <h4 class="pr-0 pr-lg-3 dark-gray">Status : <span class="pl-1"><img src="../../assets/5lines.png"></span>
+                        </h4>
+                    </div>
+                    <div class="d-flex mt-3 position-relative" onclick="showImage('loadingImage55','loadingImage1BORDER55')">
+                        <h6 class="pt-3 dark-gray">Ups</h6>
+                        <p id="loadingImage1BORDER55"
+                            class=" border-transpairent paragrharph-color w-100 py-2 fs-15 pl-4 pr-44 ml-4 hover-border border-rounded-14 mb-12 font-weight-500 custom-shadow">
+                            Risks
+                            have been added to the app and If there will be a huge
+                            String then this box (input field)will increase their size as we
+                            have made this now or If there will be small string as all then
+                            the size will be standard as remaining fields.</p>
+                        <img id="loadingImage55" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icon cursor-pointer">
+    
+    
+                    </div>
+                    <div class="position-relative d-flex mt-10 align-items-center"
+                        onclick="showImage('loadingImage58','loadingImage1BORDER58')">
+                        <h6 class="letter-spacing-1 mb-0 dark-gray">Down</h6>
+                        <p id="loadingImage1BORDER58"
+                            class="ml-2 border-transpairent ml-11 cursor-pointer paragrharph-color fs-15 hover-border w-100 py-3 px-4 border-rounded-14 custom-shadow mb-0">
+                            Registration appears to be broken</p>
+                        <img id="loadingImage58" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icons cursor-pointer">
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+    </div>
+
+    <div class="">
+        <div class="py-5 d-flex justify-content-center">
+        <img class="w-935" src="../../assets/Line 33.png">
+        </div>
+     
+        <div class="card-1 card-w border border-white bg-white py-4 py-lg-2 px-4 d-flex flex-column flex-lg-row">
+            <div class="mr-5 w-60 d-flex align-items-center justify-content-between flex-lg-row flex-column">
+                <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3>
+                <img class="py-2 py-lg-0 w-90px" src="../../assets/reddressgirl.png">
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+            <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+            </div>
+            <div class="w-40 d-flex align-items-center justify-content-between pl-2 pl-lg-5 border-start  border-2">
+                <!-- <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3> -->
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+                <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+                <div class="row">
+                    <div class="col">
+                        <!-- <div ngbDropdown class="py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                            <button class="btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle></button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem>Profile</button>
+                                <button ngbDropdownItem>Edit Profile</button>
+                                <button ngbDropdownItem>Logout</button>
+                            </div>
+                        </div> -->
+                        <div ngbDropdown class="py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                            <button class="dropdown-toggle btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle onclick="displayBlock(`listing-wrapper6`)"></button>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div id="listing-wrapper6">
+        <div id="listing-inner">
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-4 px-4">
+            <div>
+                <h4 class="pl-2 dark-gray pb-1 font-opan-sans fw-700">Tasks for this Period</h4>
+    
+                <p id="loadingImage1BORDER61" onclick="showImage('loadingImage61','loadingImage1BORDER61')"
+                    class="task-list cursor-pointer border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Create and run performace tests against the admin pages<span id="loadingImage61" class="delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+    
+                <p id="loadingImage1BORDER62" onclick="showImage('loadingImage62','loadingImage1BORDER62')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100  bg-white d-flex justify-content-between">
+                    Send info to designer
+                    for application UX<span id="loadingImage62" class="cursor-pointer delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <p id="loadingImage1BORDER63" onclick="showImage('loadingImage63','loadingImage1BORDER63')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Follow up with legal on privacy and data retention policies<span id="loadingImage63"
+                        class=" delete-icone" style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <h4 class="pl-2 pt-1 dark-gray font-opan-sans fw-700">Risks</h4>
+    
+                <p id="loadingImage1BORDER64" onclick="showImage('loadingImage64','loadingImage1BORDER64')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    No risk this week <span id="loadingImage64" class=" delete-icone" style="display: none;"><img
+                            src="../../assets/delete-icone.png"></span></p>
+    
+            </div>
+    
+        </div>
+    
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-5 px-4">
+    
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-48 pr-0 pr-lg-4">
+                    <h4 class="pl-2 dark-gray font-opan-sans fw-700">Task for the week of Jan 23, 2022 - Jan 29, 2022</h4>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Write designes for the value page</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Create requests for UX desginer</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Brainstorm on product name</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                </div>
+    
+                <div class="w-55 pl-4 border-start  border-2 mt-5 mt-lg-0">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="dark-gray font-opan-sans fw-700">Overview of this Week</h4>
+                        <h4 class="pr-0 pr-lg-3 dark-gray">Status : <span class="pl-1"><img src="../../assets/5lines.png"></span>
+                        </h4>
+                    </div>
+                    <div class="d-flex mt-3 position-relative" onclick="showImage('loadingImage65','loadingImage1BORDER65')">
+                        <h6 class="pt-3 dark-gray">Ups</h6>
+                        <p id="loadingImage1BORDER65"
+                            class=" border-transpairent paragrharph-color w-100 py-2 fs-15 pl-4 pr-44 ml-4 hover-border border-rounded-14 mb-12 font-weight-500 custom-shadow">
+                            Risks
+                            have been added to the app and If there will be a huge
+                            String then this box (input field)will increase their size as we
+                            have made this now or If there will be small string as all then
+                            the size will be standard as remaining fields.</p>
+                        <img id="loadingImage65" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icon cursor-pointer">
+    
+    
+                    </div>
+                    <div class="position-relative d-flex mt-10 align-items-center"
+                        onclick="showImage('loadingImage68','loadingImage1BORDER68')">
+                        <h6 class="letter-spacing-1 mb-0 dark-gray">Down</h6>
+                        <p id="loadingImage1BORDER68"
+                            class="ml-2 border-transpairent ml-11 cursor-pointer paragrharph-color fs-15 hover-border w-100 py-3 px-4 border-rounded-14 custom-shadow mb-0">
+                            Registration appears to be broken</p>
+                        <img id="loadingImage68" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icons cursor-pointer">
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+    </div>
+
+
+    <div class="">
+        <div class="py-5 d-flex justify-content-center">
+        <img class="w-935" src="../../assets/Line 33.png">
+        </div>
+     
+        <div class="card-1 card-w border border-white bg-white py-4 py-lg-2 px-4 d-flex flex-column flex-lg-row">
+            <div class="mr-5 w-60 d-flex align-items-center justify-content-between flex-lg-row flex-column">
+                <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3>
+                <img class="py-2 py-lg-0 w-90px" src="../../assets/reddressgirl.png">
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+                <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+            </div>
+            <div class="w-40 d-flex align-items-center justify-content-between pl-2 pl-lg-5 border-start  border-2">
+                <!-- <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3> -->
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+                <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+                <div class="row">
+                    <div class="col">
+                        <!-- <div ngbDropdown class="py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                            <button class="btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle></button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem>Profile</button>
+                                <button ngbDropdownItem>Edit Profile</button>
+                                <button ngbDropdownItem>Logout</button>
+                            </div>
+                        </div> -->
+                        <div ngbDropdown class="py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                            <button class="dropdown-toggle btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle onclick="displayBlock(`listing-wrapper7`)"></button>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="listing-wrapper7">
+        <div id="listing-inner">
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-4 px-4">
+            <div>
+                <h4 class="pl-2 dark-gray pb-1 font-opan-sans fw-700">Tasks for this Period</h4>
+    
+                <p id="loadingImage1BORDER71" onclick="showImage('loadingImage71','loadingImage1BORDER71')"
+                    class="task-list cursor-pointer border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Create and run performace tests against the admin pages<span id="loadingImage71" class="delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+    
+                <p id="loadingImage1BORDER72" onclick="showImage('loadingImage72','loadingImage1BORDER72')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100  bg-white d-flex justify-content-between">
+                    Send info to designer
+                    for application UX<span id="loadingImage72" class="cursor-pointer delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <p id="loadingImage1BORDER73" onclick="showImage('loadingImage73','loadingImage1BORDER73')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Follow up with legal on privacy and data retention policies<span id="loadingImage73"
+                        class=" delete-icone" style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <h4 class="pl-2 pt-1 dark-gray font-opan-sans fw-700">Risks</h4>
+    
+                <p id="loadingImage1BORDER74" onclick="showImage('loadingImage74','loadingImage1BORDER74')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    No risk this week <span id="loadingImage74" class=" delete-icone" style="display: none;"><img
+                            src="../../assets/delete-icone.png"></span></p>
+    
+            </div>
+    
+        </div>
+    
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-5 px-4">
+    
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-48 pr-0 pr-lg-4">
+                    <h4 class="pl-2 dark-gray font-opan-sans fw-700">Task for the week of Jan 23, 2022 - Jan 29, 2022</h4>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Write designes for the value page</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Create requests for UX desginer</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Brainstorm on product name</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                </div>
+    
+                <div class="w-55 pl-4 border-start  border-2 mt-5 mt-lg-0">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="dark-gray font-opan-sans fw-700">Overview of this Week</h4>
+                        <h4 class="pr-0 pr-lg-3 dark-gray">Status : <span class="pl-1"><img src="../../assets/5lines.png"></span>
+                        </h4>
+                    </div>
+                    <div class="d-flex mt-3 position-relative" onclick="showImage('loadingImage75','loadingImage1BORDER75')">
+                        <h6 class="pt-3 dark-gray">Ups</h6>
+                        <p id="loadingImage1BORDER75"
+                            class="border-transpairent paragrharph-color w-100 py-2 fs-15 pl-4 pr-44 ml-4 hover-border border-rounded-14 mb-12 font-weight-500 custom-shadow">
+                            Risks
+                            have been added to the app and If there will be a huge
+                            String then this box (input field)will increase their size as we
+                            have made this now or If there will be small string as all then
+                            the size will be standard as remaining fields.</p>
+                        <img id="loadingImage75" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icon cursor-pointer">
+    
+    
+                    </div>
+                    <div class="position-relative d-flex mt-10 align-items-center"
+                        onclick="showImage('loadingImage78','loadingImage1BORDER78')">
+                        <h6 class="letter-spacing-1 mb-0 dark-gray">Down</h6>
+                        <p id="loadingImage1BORDER78"
+                            class="ml-2 border-transpairent ml-11 cursor-pointer paragrharph-color fs-15 hover-border w-100 py-3 px-4 border-rounded-14 custom-shadow mb-0">
+                            Registration appears to be broken</p>
+                        <img id="loadingImage78" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icons cursor-pointer">
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+    </div>
+
+    <div class="">
+        <div class="py-5 d-flex justify-content-center">
+        <img class="w-935" src="../../assets/Line 33.png">
+        </div>
+     
+        <div class="card-1 card-w border border-white bg-white py-4 py-lg-2 px-4 d-flex flex-column flex-lg-row">
+            <div class="mr-5 w-60 d-flex align-items-center justify-content-between flex-lg-row flex-column">
+                <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3>
+                <img class="py-2 py-lg-0 w-90px" src="../../assets/reddressgirl.png">
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+                <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+            </div>
+            <div class="w-40 d-flex align-items-center justify-content-between pl-2 pl-lg-5 border-start  border-2">
+                <!-- <h3 class="font-weight-600 dark-gray font-opan-sans mb-0">user one</h3> -->
+                <p class="fs-15 mb-0 font-DM-Sans text-gray-light">Tasks for this week:</p>
+                <p class="fs-15 mb-0 fw-bolder dark-gray">142 Tasks</p>
+                <div class="row">
+                    <div class="col">
+                        <!-- <div ngbDropdown class="py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                            <button class="btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle></button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem>Profile</button>
+                                <button ngbDropdownItem>Edit Profile</button>
+                                <button ngbDropdownItem>Logout</button>
+                            </div>
+                        </div> -->
+                        <div ngbDropdown class="py-2 px-2 card-1 custom-shadow border border-white bg-white d-inline-block">
+                            <button class="dropdown-toggle btn btn-blue shadow-none" id="dropdownBasic1" ngbDropdownToggle onclick="displayBlock(`listing-wrapper8`)"></button>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="listing-wrapper8">
+        <div id="listing-inner">
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-4 px-4">
+            <div>
+                <h4 class="pl-2 dark-gray pb-1 font-opan-sans fw-700">Tasks for this Period</h4>
+    
+                <p id="loadingImage1BORDER81" onclick="showImage('loadingImage81','loadingImage1BORDER81')"
+                    class="task-list cursor-pointer border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Create and run performace tests against the admin pages<span id="loadingImage81" class="delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+    
+                <p id="loadingImage1BORDER82" onclick="showImage('loadingImage82','loadingImage1BORDER82')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100  bg-white d-flex justify-content-between">
+                    Send info to designer
+                    for application UX<span id="loadingImage82" class="cursor-pointer delete-icone"
+                        style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <p id="loadingImage1BORDER83" onclick="showImage('loadingImage83','loadingImage1BORDER83')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    Follow up with legal on privacy and data retention policies<span id="loadingImage83"
+                        class=" delete-icone" style="display: none;"><img src="../../assets/delete-icone.png"></span></p>
+                <h4 class="pl-2 pt-1 dark-gray font-opan-sans fw-700">Risks</h4>
+    
+                <p id="loadingImage1BORDER84" onclick="showImage('loadingImage84','loadingImage1BORDER84')"
+                    class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+                    No risk this week <span id="loadingImage84" class=" delete-icone" style="display: none;"><img
+                            src="../../assets/delete-icone.png"></span></p>
+    
+            </div>
+    
+        </div>
+    
+        <div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-5 px-4">
+    
+            <div class="d-flex flex-column flex-lg-row">
+                <div class="w-48 pr-0 pr-lg-4">
+                    <h4 class="pl-2 dark-gray font-opan-sans fw-700">Task for the week of Jan 23, 2022 - Jan 29, 2022</h4>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Write designes for the value page</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label> -->
+                        <!-- </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Create requests for UX desginer</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p
+                            class="w-100 paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                            Brainstorm on product name</p>
+                        <!-- <div class="d-flex align-items-center"> -->
+                        <!-- Default switch -->
+                        <!-- <label class="switch mb-0">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                        </div> -->
+                    </div>
+                </div>
+    
+                <div class="w-55 pl-4 border-start  border-2 mt-5 mt-lg-0">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="dark-gray font-opan-sans fw-700">Overview of this Week</h4>
+                        <h4 class="pr-0 pr-lg-3 dark-gray">Status : <span class="pl-1"><img src="../../assets/5lines.png"></span>
+                        </h4>
+                    </div>
+                    <div class="d-flex mt-3 position-relative" onclick="showImage('loadingImage85','loadingImage1BORDER85')">
+                        <h6 class="pt-3 dark-gray">Ups</h6>
+                        <p id="loadingImage1BORDER85"
+                            class="border-transpairent paragrharph-color w-100 py-2 fs-15 pl-4 pr-44 ml-4 hover-border border-rounded-14 mb-12 font-weight-500 custom-shadow">
+                            Risks
+                            have been added to the app and If there will be a huge
+                            String then this box (input field)will increase their size as we
+                            have made this now or If there will be small string as all then
+                            the size will be standard as remaining fields.</p>
+                        <img id="loadingImage85" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icon cursor-pointer">
+    
+    
+                    </div>
+                    <div class="position-relative d-flex mt-10 align-items-center"
+                        onclick="showImage('loadingImage88','loadingImage1BORDER88')">
+                        <h6 class="letter-spacing-1 mb-0 dark-gray">Down</h6>
+                        <p id="loadingImage1BORDER88"
+                            class="ml-2 border-transpairent ml-11 cursor-pointer paragrharph-color fs-15 hover-border w-100 py-3 px-4 border-rounded-14 custom-shadow mb-0">
+                            Registration appears to be broken</p>
+                        <img id="loadingImage88" class=" delete-icone" style="display: none;"
+                            src="../../assets/delete-icone.png" class="position-absolute del-icons cursor-pointer">
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+    </div>
+
+
+    
+
+</div>

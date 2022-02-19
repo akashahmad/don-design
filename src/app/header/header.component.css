@@ -1,0 +1,30 @@
+.header {
+    background-color: #3160A8;
+}
+
+.dropdown-toggle:empty::after {
+    margin-left: 0;
+    color: white !important;
+}
+
+nav li {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+a {
+    color: white !important;
+    text-decoration: none;
+}
+.my-status:hover {
+    opacity: unset !important;
+}
+
+.active-nav{
+    color: white;
+    background-image: url("../../assets/rectangle.png");
+    background-repeat: no-repeat;
+    background-position-y: 32px;
+    opacity: unset !important;
+    padding: 0px 0px 17px 0px;
+  }

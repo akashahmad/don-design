@@ -1,0 +1,146 @@
+body {
+  background-color: #f4f7fe;
+}
+
+.colloumn-1 {
+  width: 22%;
+}
+.card-1 {
+  border-radius: 20px !important;
+}
+
+.font-color {
+  color: #a3aed0;
+}
+h3 {
+  font-size: 22px;
+}
+h4 {
+  font-size: 17px;
+}
+.fw-700 {
+  font-weight: 700 !important;
+}
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+h5 {
+  font-size: 14px !important;
+}
+h6 {
+  font-size: 16px !important;
+}
+.col-3 {
+  max-width: 22% !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.font-weight-600 {
+  font-weight: 600 !important;
+}
+
+.w-90px {
+  width: 90px;
+}
+.w-60 {
+  width: 55%;
+}
+.w-40 {
+  width: 45%;
+}
+.custom-shadow {
+  box-shadow: 0 0.5rem 1rem rgba(112, 144, 176, 0.12) !important;
+}
+.btn-blue {
+  color: rgb(78, 78, 245) !important;
+  font-size: 20px;
+}
+
+.border-radius {
+  border-radius: 14px !important;
+}
+.card1:hover {
+  background-color: #3160a8 !important;
+  color: white !important;
+  /* opacity: 0.9; */
+  transition: 0.5s ease-in-out;
+  opacity: unset !important;
+}
+.card1:hover .stauts-subheading {
+  opacity: unset !important;
+}
+
+.hover-border:hover {
+  border-color: #3160a8 !important;
+}
+
+.delete-icone {
+  background-color: #f9c7ca;
+  padding: 8px 13px 13px 13px;
+  border-radius: 10px;
+  position: absolute;
+  right: 8px;
+  top: 6px;
+}
+
+.border-rounded-14 {
+  border-radius: 14px;
+}
+
+.dark-gray {
+  color: #1b2559;
+}
+
+.paragrharph-color {
+  color: #1b2559;
+}
+
+.pr-44 {
+  padding-right: 85px;
+}
+.fs-15 {
+  font-size: 16px;
+}
+
+.w-48 {
+  width: 48%;
+}
+.w-55 {
+  width: 55%;
+}
+.del-icon {
+  right: 12px;
+  top: 10px;
+  padding: 13px 13px 13px 13px;
+  background-color: #f9c7ca;
+  border-radius: 10px;
+}
+.del-icons {
+  right: 12px;
+  top: 6px;
+  padding: 13px 13px 13px 13px;
+  background-color: #f9c7ca;
+  border-radius: 10px;
+}
+
+.border-width {
+  border-width: 1px 1px !important;
+}
+.w-935 {
+  width: 935px;
+}
+.text-gray-light {
+  color: #a3aed0 !important;
+}
+
+
+
+.dropdown-toggle[aria-expanded="true"]:after {
+  transform: rotate(180deg);
+} /*for the animation*/
+.dropdown-toggle:after {
+  transition: 0.5s;
+}

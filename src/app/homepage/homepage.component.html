@@ -1,0 +1,201 @@
+<div class="container pt-5">
+    <div class="flex-wrap row d-flex justify-content-center flex-lg-row">
+        <div class="colloumn-1 col-lg-12 pl-0">
+            <h3 class="pb-2 pl-1 dark-gray font-opan-sans">Select Date</h3>
+            <div class="card-1 border border-white bg-white px-4 py-3">
+                <div class="d-flex justify-content-between pb-2">
+                    <h4 class="font-weight-700 font-opan-sans">Select Week</h4>
+
+                    <button class="p-0 btn btn-outline-secondary calendar" (click)="datepicker.toggle()" type="button">
+                        <img class="select-box calender-box" src="../../assets/percentage.svg">
+                    </button>
+
+                </div>
+                <div>
+                    <form class="row row-cols-sm-auto">
+                        <div class="col-12 pl-0 pr-0">
+                            <div class="dp-hidden position-absolute">
+                                <div class="input-group">
+                                    <input name="datepicker" class="form-control" ngbDatepicker
+                                        #datepicker="ngbDatepicker" [autoClose]="'outside'"
+                                        (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
+                                        outsideDays="hidden" [startDate]="fromDate!" tabindex="-1" />
+                                    <ng-template #t let-date let-focused="focused">
+                                        <span class="custom-day" [class.focused]="focused" [class.range]="isRange(date)"
+                                            [class.faded]="isHovered(date) || isInside(date)"
+                                            (mouseenter)="hoveredDate = date" (mouseleave)="hoveredDate = null">
+                                            {{ date.day }}
+                                        </span>
+                                    </ng-template>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                
+                                <input #dpFromDate class="form-control datepicker" placeholder="dd/mm/yyyy" name="dpFromDate"
+                                    [value]="formatter.format(fromDate)"
+                                    (input)="fromDate = validateInput(fromDate, dpFromDate.value)"
+                                    style="border: transparent !important;" />
+                                <input #dpToDate class="form-control datepicker" placeholder="dd/mm/yyyy" name="dpToDate"
+                                    [value]="formatter.format(toDate)"
+                                    (input)="toDate = validateInput(toDate, dpToDate.value)"
+                                    style="border: transparent !important; text-align: end;" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="d-flex justify-content-between">
+
+
+                </div> -->
+
+            </div>
+        </div>
+        <div class="colloumn-2">
+            <h3 class="pb-2 pl-1 dark-gray font-opan-sans">First Admin</h3>
+            <div class="cursor-pointer card1 border border-white bg-white p-4">
+                <div class="d-flex justify-content-between pb-2">
+                    <h5 class="opacity-75 font-opan-sans stauts-subheading">Completed Over Time</h5>
+                </div>
+                <div class="d-flex justify-content-between font-DM-Sans">
+                    <p class="font-size mb-0 fw-bold font-DM-Sans">0 of 0</p>
+
+                    <p class="font-size mb-0 fw-bold font-DM-Sans">0%</p>
+                </div>
+            </div>
+        </div>
+        <div class="thirdColumn colloumn-3">
+            <h3 class="pb-2 pl-1 d-none">Select Date</h3>
+            <div class="cursor-pointer card1 border border-white bg-white p-4">
+                <div class="d-flex justify-content-between pb-2">
+                    <h5 class="opacity-75 font-opan-sans stauts-subheading">Completed During the last Three Months</h5>
+                </div>
+                <div class="d-flex justify-content-between font-DM-Sans">
+                    <h3 class="font-size mb-0 fw-bold font-DM-Sans">0 of 0</h3>
+
+                    <h3 class="font-size mb-0 fw-bold font-DM-Sans">0%</h3>
+                </div>
+            </div>
+        </div>
+        <div class="thirdColumn colloumn-4 pr-0">
+            <h3 class="pb-2 pl-1 d-none">Select Date</h3>
+            <div class="cursor-pointer card1 border border-white bg-white p-4">
+                <div class="d-flex justify-content-between pb-2">
+                    <h5 class="opacity-75 font-opan-sans stauts-subheading">Completed This Week</h5>
+                </div>
+                <div class="d-flex justify-content-between font-DM-Sans">
+                    <h3 class="font-size mb-0 fw-bold font-DM-Sans">0 of 0</h3>
+
+                    <h3 class="font-size mb-0 fw-bold font-DM-Sans">0%</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="border-radius task-for-this-period container border border-white bg-white mt-4 py-4 px-4">
+    <div>
+        <h4 class="pl-2 dark-gray pb-1 font-opan-sans">Tasks for this Period</h4>
+
+        <p id="loadingImage1BORDER" onclick="showImage('loadingImage1','loadingImage1BORDER')"
+            class="task-list cursor-pointer border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow pr-32 pr-lg-0 px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+            Create and run performace tests against the admin pages<span id="loadingImage1" class="delete-icone"
+                style="display: none;"><img src="../../assets/delete-icone.png" onclick="deleteRow('loadingImage1BORDER')"></span></p>
+
+        <p id="loadingImage1BORDER2" onclick="showImage('loadingImage2','loadingImage1BORDER2')"
+            class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100  bg-white d-flex justify-content-between">
+            Send info to designer
+            for application UX<span id="loadingImage2" class="cursor-pointer delete-icone" style="display: none;"><img
+                    src="../../assets/delete-icone.png" onclick="deleteRow('loadingImage1BORDER2')"></span></p>
+        <p id="loadingImage1BORDER3" onclick="showImage('loadingImage3','loadingImage1BORDER3')"
+            class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+            Follow up with legal on privacy and data retention policies<span id="loadingImage3" class=" delete-icone"
+                style="display: none;"><img src="../../assets/delete-icone.png" onclick="deleteRow('loadingImage1BORDER3')"></span></p>
+        <h4 id="loadingImage1BORDERab1" class="pl-2 pt-1 dark-gray font-opan-sans">Risks</h4>
+<div id="loadingImage1BORDERab2">
+        <p  onclick="showImage('loadingImage4','loadingImage1BORDER4')"
+            class="task-list cursor-pointer  border-transpairent paragrharph-color fs-15 position-relative hover-border custom-shadow px-4 py-3 border-radius w-100 bg-white d-flex justify-content-between">
+            No risk this week <span id="loadingImage4" class=" delete-icone" style="display: none;"><img
+                    src="../../assets/delete-icone.png" onclick="deleteRow('loadingImage1BORDERab1','loadingImage1BORDERab2')"></span></p>
+                    </div>
+
+    </div>
+
+</div>
+
+<div class="mb-5 border-radius task-for-this-period container border border-white bg-white mt-4 py-5 px-4">
+
+    <div class="d-flex flex-column flex-lg-row">
+        <div class="w-48 pr-0 pr-lg-4">
+            <h4 class="fs-15 pl-2 dark-gray font-opan-sans">Task for the week of Jan 23, 2022 - Jan 29, 2022</h4>
+            <div class="d-flex mt-4 justify-content-between">
+                <p
+                    class="paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                    Write designes for the value page</p>
+                <div class="d-flex align-items-center pl-2 pl-lg-0">
+                    <!-- Default switch -->
+                    <label class="switch mb-0">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="d-flex mt-4 justify-content-between">
+                <p
+                    class="paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                    Create requests for UX desginer</p>
+                <div class="d-flex align-items-center pl-2 pl-lg-0">
+                    <!-- Default switch -->
+                    <label class="switch mb-0">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="d-flex mt-4 justify-content-between">
+                <p
+                    class="paragrharph-color cursor-pointer fs-15 hover-border wp-86 py-3 px-4 border-rounded-14 custom-shadow border border-white bg-white mb-0">
+                    Brainstorm on product name</p>
+                <div class="d-flex align-items-center pl-2 pl-lg-0">
+                    <!-- Default switch -->
+                    <label class="switch mb-0">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-55 pl-4 border-start  border-2 mt-5 mt-lg-0">
+            <div class="d-flex justify-content-between">
+                <h4 class="dark-gray font-opan-sans">Overview of this Week</h4>
+                <h4 class="pr-0 pr-lg-3 dark-gray">Status : <span class="pl-1"><img src="../../assets/5lines.png"></span></h4>
+            </div>
+            <div class="d-flex mt-3 position-relative" id="loadingImage1BORDERa1" onclick="showImage('loadingImage5','loadingImage1BORDER5')">
+                <h6 class="pt-3 dark-gray">Ups</h6>
+                <p id="loadingImage1BORDER5"     class=" border-transpairent paragrharph-color w-100 py-2 fs-15 pl-4 pr-44 ml-4 hover-border border-rounded-14 mb-12 font-weight-500 custom-shadow">
+                    Risks
+                    have been added to the app and If there will be a huge
+                    String then this box (input field)will increase their size as we
+                    have made this now or If there will be small string as all then
+                    the size will be standard as remaining fields.</p>
+               
+                <img id="loadingImage5" onclick="deleteRow('loadingImage1BORDERa1')" class=" delete-icone" style="display: none;" src="../../assets/delete-icone.png"
+                    class="position-absolute del-icon cursor-pointer">
+
+
+            </div>
+            <div id="loadingImage1BORDERa2" class="position-relative d-flex mt-10 align-items-center"
+                onclick="showImage('loadingImage8','loadingImage1BORDER8')">
+                <h6 class="letter-spacing-1 mb-0 dark-gray">Down</h6>
+                <p id="loadingImage1BORDER8"
+                    class="border-transpairent ml-11 cursor-pointer paragrharph-color fs-15 hover-border w-100 py-3 px-4 border-rounded-14 custom-shadow mb-0">
+                    Registration appears to be broken</p>
+                <img id="loadingImage8" onclick="deleteRow('loadingImage1BORDERa2')" class=" delete-icone" style="display: none;" src="../../assets/delete-icone.png"
+                    class="position-absolute del-icons cursor-pointer">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
