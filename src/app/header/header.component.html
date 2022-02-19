@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header d-none d-lg-block">
     <nav class="container-fluid py-2 px-4">
 
         <div>
@@ -46,3 +46,26 @@
     </nav>
 
 </div>
+
+  <!-- Top menu -->
+  <nav class="navbar navbar-dark fixed-top  d-block d-lg-none">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Bootstrap Hamburger Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link scroll-link" routerLink="/my-status" >My Status</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/my-teams" class="nav-link scroll-link">My Teams</a>
+                </li>
+        
+            </ul>
+        </div>
+    </div>
+</nav>
