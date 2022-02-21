@@ -1,225 +1,223 @@
 .card-1 {
-    border-radius: 20px !important;
+  border-radius: 20px !important;
 }
 .card1 {
-    border-radius: 20px !important;
+  border-radius: 20px !important;
 }
 .border-radius {
-    border-radius: 14px !important;
+  border-radius: 14px !important;
 }
-.card1:hover{
-   background-color: #3160A8 !important;
-   color: white !important;
-   /* opacity: 0.9; */
-   transition: 0.5s ease-in-out;
-   opacity: unset !important;
+.card1:hover {
+  background-color: #3160a8 !important;
+  color: white !important;
+  /* opacity: 0.9; */
+  transition: 0.5s ease-in-out;
+  opacity: unset !important;
 }
-.card1:hover .stauts-subheading{
-    opacity: unset !important;
+.card1:hover .stauts-subheading {
+  opacity: unset !important;
 }
 .calender-box:hover {
-    background-color: white;
-    color: white;
+  background-color: white;
+  color: white;
 }
 .font-color {
-    color : #A3AED0;
+  color: #a3aed0;
 }
 h3 {
-    font-size: 22px;
+  font-size: 22px;
 }
 h4 {
-    font-size: 17px;
-    font-weight: 700;
+  font-size: 17px;
+  font-weight: 700;
 }
 h5 {
-    font-size: 14px !important;
+  font-size: 14px !important;
 }
 h6 {
-    font-size: 16px;
+  font-size: 16px;
 }
 .col-3 {
-    max-width: 22% !important;
+  max-width: 22% !important;
 }
 
 .thirdColumn {
-    padding-top: 44px;
+  padding-top: 44px;
 }
 
 .colloumn-1 {
-    width: 22%;
+  width: 22%;
 }
 .colloumn-2 {
-    width: 26%;
+  width: 26%;
 }
 .colloumn-3 {
-    width: 31%;
+  width: 31%;
 }
 .colloumn-4 {
-    width: 21%;
+  width: 21%;
 }
 
-
 .hover-border:hover {
-    border-color: #3160A8 !important;
+  border-color: #3160a8 !important;
 }
 
 .delete-icone {
-    background-color: #F9C7CA;
-    padding: 8px 13px 13px 13px;
-    border-radius: 10px;
-    position: absolute;
-    right: 8px;
-    top: 6px;
+  background-color: #f9c7ca;
+  padding: 8px 13px 13px 13px;
+  border-radius: 10px;
+  position: absolute;
+  right: 8px;
+  top: 6px;
 }
 
-.border-rounded-14{
-    border-radius: 14px;
+.border-rounded-14 {
+  border-radius: 14px;
 }
 .wp-86 {
-    width: 86%;
+  width: 86%;
 }
 
 /* switch button */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 56px;
-    height: 32px;
-  }
-  
-  .switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #e2e2e2;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 24px;
-    left: 4px;
-    bottom: 3px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  input:checked + .slider:before{
-    background-color: #3160A8 !important;
-  }
-  
-  input:checked + .slider {
-    background-color: #E9F2FF;
-  }
-  /* .task-list{
-      min-height: 57px;
-  } */
-  /* input:focus + .slider {
-    box-shadow: 0 0 1px #3160A8;
-  } */
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-  .slider.round[_ngcontent-sht-c19]:before {
-    height: 24px !important;
-    width: 24px !important;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-}
-input[_ngcontent-xxc-c19]:checked + .slider[_ngcontent-xxc-c19] {
-    background-color: #F4F7FE !important;
-}
-.slider[_ngcontent-woq-c19]:before {
-    background-color: white !important;
-    transition: .4s;
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 32px;
 }
 
-.del-icon{
-    right: 12px;
-    top: 10px;
-    padding: 13px 13px 13px 13px;
-    background-color: #F9C7CA;
-    border-radius: 10px;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
-.del-icons{
-    right: 12px;
-    top: 6px;
-    padding: 13px 13px 13px 13px;
-    background-color: #F9C7CA;
-    border-radius: 10px;
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e2e2e2;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 24px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+input:checked + .slider:before {
+  background-color: #3160a8 !important;
+}
+
+input:checked + .slider {
+  background-color: #e9f2ff;
+}
+/* .task-list{
+      min-height: 57px;
+  } */
+/* input:focus + .slider {
+    box-shadow: 0 0 1px #3160A8;
+  } */
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.slider.round[_ngcontent-sht-c19]:before {
+  height: 24px !important;
+  width: 24px !important;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+input[_ngcontent-xxc-c19]:checked + .slider[_ngcontent-xxc-c19] {
+  background-color: #f4f7fe !important;
+}
+.slider[_ngcontent-woq-c19]:before {
+  background-color: white !important;
+  transition: 0.4s;
+}
+
+.del-icon {
+  right: 12px;
+  top: 10px;
+  padding: 13px 13px 13px 13px;
+  background-color: #f9c7ca;
+  border-radius: 10px;
+}
+.del-icons {
+  right: 12px;
+  top: 6px;
+  padding: 13px 13px 13px 13px;
+  background-color: #f9c7ca;
+  border-radius: 10px;
 }
 .pr-44 {
-    padding-right: 85px;
+  padding-right: 85px;
 }
 .fs-15 {
-    font-size: 16px;
+  font-size: 16px;
 }
-.fs-fifteen  {
-    font-size: 15px !important;
+.fs-fifteen {
+  font-size: 15px !important;
 }
 
 .w-48 {
-    width: 48%;
+  width: 48%;
 }
 .w-55 {
-    width: 55%;
+  width: 55%;
 }
 .font-size {
-    font-size: 20px !important;
+  font-size: 20px !important;
 }
 
 .select-box {
-    width: 19px;
-    height: 19px;
+  width: 19px;
+  height: 19px;
 }
 
 .dark-gray {
-    color:#1B2559
+  color: #1b2559;
 }
 
 .paragrharph-color {
-   color :#1B2559
+  color: #1b2559;
 }
 
 .cursor-pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .ml-11 {
-    margin-left: 11px;
+  margin-left: 11px;
 }
 
 .custom-shadow {
-    box-shadow: 0 .5rem 1rem rgba(112,144,176,.12)!important;
+  box-shadow: 0 0.5rem 1rem rgba(112, 144, 176, 0.12) !important;
 }
 
-
 .my-status:hover {
-    opacity: unset !important;
+  opacity: unset !important;
 }

@@ -2,42 +2,51 @@
     <nav class="container-fluid py-2 px-4">
 
         <div>
-            <ul class="d-flex justify-content-between mb-0 align-items-center pl-0">
+            <ul class="d-flex justify-content-between mb-0 align-items-center
+                pl-0">
 
                 <div class="d-flex align-items-center">
                     <div class="logo mr-3">
                         <img src="../../assets/logo.png">
                     </div>
                     <div>
-                    <li class="text-light text-decoration-none list-unstyled font-opan-sans">Home</li>
+                        <li class="text-light text-decoration-none list-unstyled
+                            font-opan-sans">Home</li>
                     </div>
                 </div>
                 <div class="d-flex">
                     <div class="position-relative">
-                        <li class="text-light mr-2 text-decoration-none list-unstyled"><a routerLink="/my-status"   routerLinkActive="active-nav"  class="px-4 font-opan-sans opacity-75 my-status">My Status</a></li>
+                        <li class="text-light mr-2 text-decoration-none
+                            list-unstyled"><a routerLink="/my-status"
+                                routerLinkActive="active-nav" class="px-4
+                                font-opan-sans opacity-75 my-status">My Status</a></li>
                     </div>
                     <div class="position-relative">
-                        <li class="text-light text-decoration-none list-unstyled px-4"><a routerLink="/my-teams" routerLinkActive="active-nav" class="px-4 font-opan-sans opacity-75 my-status">My Teams</a></li>
+                        <li class="text-light text-decoration-none list-unstyled
+                            px-4"><a routerLink="/my-teams"
+                                routerLinkActive="active-nav" class="px-4
+                                font-opan-sans opacity-75 my-status">My Teams</a></li>
                     </div>
                 </div>
                 <div class="d-flex">
-                    <li class="text-light text-decoration-none list-unstyled"><img src="../../assets/Avatar.png"></li>
+                    <li class="text-light text-decoration-none list-unstyled"><img
+                            src="../../assets/Avatar.png"></li>
                     <div class="row">
                         <div class="col">
-                          <div ngbDropdown class="d-inline-block">
-                            <button
-                              class="btn btn-white shadow-none"
-                              id="dropdownBasic1"
-                              ngbDropdownToggle
-                            ></button>
-                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                              <button ngbDropdownItem>Profile</button>
-                              <button ngbDropdownItem>Edit Profile</button>
-                              <button ngbDropdownItem>Logout</button>
+                            <div ngbDropdown class="d-inline-block">
+                                <button
+                                    class="btn btn-white shadow-none"
+                                    id="dropdownBasic1"
+                                    ngbDropdownToggle></button>
+                                <div ngbDropdownMenu
+                                    aria-labelledby="dropdownBasic1">
+                                    <button ngbDropdownItem>Profile</button>
+                                    <button ngbDropdownItem>Edit Profile</button>
+                                    <button ngbDropdownItem>Logout</button>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </ul>
         </div>
@@ -47,25 +56,55 @@
 
 </div>
 
-  <!-- Top menu -->
-  <nav class="navbar navbar-dark fixed-top  d-block d-lg-none">
+<!-- Top menu -->
+<nav class="navbar navbar-dark fixed-top d-block d-lg-none">
     <div class="container">
         <a class="navbar-brand" href="index.html">Bootstrap Hamburger Menu</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link scroll-link" routerLink="/my-status" >My Status</a>
-                </li>
-                <li class="nav-item">
-                    <a routerLink="/my-teams" class="nav-link scroll-link">My Teams</a>
-                </li>
-        
-            </ul>
+            <div class="d-flex justify-content-between border border-2 mt-4 rounded-3">
+               
+                <div class="pl-3">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link pt-2 scroll-link"
+                                routerLink="/my-status">My
+                                Status</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/my-teams" class="nav-link
+                                scroll-link">My
+                                Teams</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center">
+                    <img class="mobile-avatar-h" src="../../assets/Avatar.png">
+                    <div class="row">
+                        <div class="col">
+                            <div ngbDropdown class="d-inline-block">
+                                <button
+                                    class="btn btn-white shadow-none"
+                                    id="dropdownBasic1"
+                                    ngbDropdownToggle></button>
+                                <div ngbDropdownMenu
+                                    aria-labelledby="dropdownBasic1">
+                                    <button ngbDropdownItem>Profile</button>
+                                    <button ngbDropdownItem>Edit Profile</button>
+                                    <button ngbDropdownItem>Logout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </nav>

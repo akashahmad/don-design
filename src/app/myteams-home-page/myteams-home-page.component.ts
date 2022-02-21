@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbDate, NgbCalendar, NgbDateParserFormatter} from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbDate,
+  NgbCalendar,
+  NgbDateParserFormatter,
+} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-myteams-home-page',
   templateUrl: './myteams-home-page.component.html',
   styleUrls: ['./myteams-home-page.component.css'],
-  styles: [`
+  styles: [
+    `
       .dp-hidden {
         width: 0;
         margin: 0;
@@ -20,33 +25,41 @@ import {NgbDate, NgbCalendar, NgbDateParserFormatter} from '@ng-bootstrap/ng-boo
         width: 2rem;
       }
       .custom-day.focused {
-        background-color: #E6E6E6;
+        background-color: #e6e6e6;
       }
-      .custom-day.range, .custom-day:hover {
+      .custom-day.range,
+      .custom-day:hover {
         background-color: rgb(2, 117, 216);
         color: white;
       }
       .custom-day.faded {
         background-color: rgba(2, 117, 216, 0.5);
       }
-    `]
+    `,
+  ],
 })
 export class MyteamsHomePageComponent implements OnInit {
-
   hoveredDate: NgbDate | null = null;
   fromDate: NgbDate | null;
-toDate: NgbDate | null;
-constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormatter) {
- this.fromDate = calendar.getToday();
- this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
-}
-
-  ngOnInit(): void {
+  toDate: NgbDate | null;
+  constructor(
+    private calendar: NgbCalendar,
+    public formatter: NgbDateParserFormatter
+  ) {
+    this.fromDate = calendar.getToday();
+    this.toDate = calendar.getNext(calendar.getToday(), 'd', 10);
   }
+
+  ngOnInit(): void {}
   onDateSelection(date: NgbDate) {
     if (!this.fromDate && !this.toDate) {
       this.fromDate = date;
-    } else if (this.fromDate && !this.toDate && date && date.after(this.fromDate)) {
+    } else if (
+      this.fromDate &&
+      !this.toDate &&
+      date &&
+      date.after(this.fromDate)
+    ) {
       this.toDate = date;
     } else {
       this.toDate = null;
@@ -54,17 +67,29 @@ constructor(private calendar: NgbCalendar, public formatter: NgbDateParserFormat
     }
   }
   isHovered(date: NgbDate) {
-    return this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) &&
-        date.before(this.hoveredDate);
+    return (
+      this.fromDate &&
+      !this.toDate &&
+      this.hoveredDate &&
+      date.after(this.fromDate) &&
+      date.before(this.hoveredDate)
+    );
   }
-  isInside(date: NgbDate) { return this.toDate && date.after(this.fromDate) && date.before(this.toDate); }
+  isInside(date: NgbDate) {
+    return this.toDate && date.after(this.fromDate) && date.before(this.toDate);
+  }
   isRange(date: NgbDate) {
-    return date.equals(this.fromDate) || (this.toDate && date.equals(this.toDate)) || this.isInside(date) ||
-        this.isHovered(date);
+    return (
+      date.equals(this.fromDate) ||
+      (this.toDate && date.equals(this.toDate)) ||
+      this.isInside(date) ||
+      this.isHovered(date)
+    );
   }
   validateInput(currentValue: NgbDate | null, input: string): NgbDate | null {
     const parsed = this.formatter.parse(input);
-    return parsed && this.calendar.isValid(NgbDate.from(parsed)) ? NgbDate.from(parsed) : currentValue;
+    return parsed && this.calendar.isValid(NgbDate.from(parsed))
+      ? NgbDate.from(parsed)
+      : currentValue;
   }
-
 }

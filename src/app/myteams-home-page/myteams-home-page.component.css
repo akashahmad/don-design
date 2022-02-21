@@ -136,11 +136,16 @@ h6 {
   color: #a3aed0 !important;
 }
 
-
-
 .dropdown-toggle[aria-expanded="true"]:after {
   transform: rotate(180deg);
 } /*for the animation*/
 .dropdown-toggle:after {
   transition: 0.5s;
+}
+
+.w-41 {
+  width: 41%;
+}
+.w-49 {
+  width: 49%;
 }

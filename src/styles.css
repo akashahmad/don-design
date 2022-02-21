@@ -120,9 +120,9 @@ nav li:hover .teamsBorder {
     .w-55 {
         width: 100% !important;
     }
-    .pr-32 {
-        padding-right: 50px !important;
-    }
+    /* .pr-32 {
+        padding-right: 32px !important;
+    } */
     .ngb-dp-content{
         flex-wrap: wrap !important;
     }
@@ -148,6 +148,55 @@ nav li:hover .teamsBorder {
     .w-935 {
         width: 64% !important;
     }
+    .del-icon {
+        padding: 8px 8px 8px 8px !important;
+
+    }
+    .delete-icone{
+        padding: 8px 8px 8px 13px !important;
+        right: 12px !important;
+        top: 15px !important;
+        position: unset !important;
+    }
+    .mobile-avatar-h {
+        height: 40px;
+    }
+    .dropdown-menu {
+        left: -128px !important;
+    }
+    .h-70{
+        height: 70px !important;
+    }
+
+    .w-16 {
+        width: 16%;
+    }
+
+    .w-85 {
+        width: 85%;
+    }
+    .border-none-medium {
+        border: none !important;
+    }
+    .pr-44  {
+        padding-right: 50px !important;
+    }
+    .status-bars {
+        width: 25px;
+    }
+    .w-49 {
+        width: 100% !important;
+      }
+    .pr-78 {
+        padding-right: 78px;
+    }
+    .position-md {
+        position: absolute;
+        bottom: -4px;
+        right: -2px;
+    }
+
+
  }
 
 
@@ -195,6 +244,9 @@ nav li:hover .teamsBorder {
     .w-935 {
         width: 64% !important;
     }
-
+    .border-none-medium {
+        border: none !important;
+    }
+    
 }
 
