@@ -262,6 +262,7 @@ nav li:hover .teamsBorder {
 
 /*------------ week picker css ----------------*/
 
+
 .datepicker .datepicker-days tr td.active ~ td,
 .datepicker .datepicker-days tr td.active{
     color: #af1623 !important;
