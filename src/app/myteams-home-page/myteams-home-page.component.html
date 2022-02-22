@@ -7,7 +7,7 @@
         >
           Select Date
         </h3>
-        <div class="card-1 border border-white bg-white p-4">
+        <div class="position-relative card-1 border border-white bg-white p-4">
           <div class="d-flex justify-content-between pb-2">
             <h4 class="fw-700 font-opan-sans">Select Week</h4>
             <button class="p-0 btn btn-outline-secondary calendar">
@@ -18,80 +18,25 @@
             </button>
           </div>
           <div>
-            <!-- <form class="row row-cols-sm-auto">
-                            <div class="col-12 pl-0 pr-0">
-                                <div class="dp-hidden position-absolute">
-                                    <div class="input-group">
-                                        <input name="datepicker"
-                                            class="form-control" ngbDatepicker
-                                            #datepicker="ngbDatepicker"
-                                            [autoClose]="'outside'"
-                                            (dateSelect)="onDateSelection($event)"
-                                            [displayMonths]="2"
-                                            [dayTemplate]="t"
-                                            outsideDays="hidden"
-                                            [startDate]="fromDate!"
-                                            tabindex="-1" />
-                                        <ng-template #t let-date
-                                            let-focused="focused">
-                                            <span class="custom-day"
-                                                [class.focused]="focused"
-                                                [class.range]="isRange(date)"
-                                                [class.faded]="isHovered(date)
-                                                ||
-                                                isInside(date)"
-                                                (mouseenter)="hoveredDate= date"
-                                                (mouseleave)="hoveredDate=
-                                                null">
-                                                {{ date.day }}
-                                            </span>
-                                        </ng-template>
-                                    </div>
-                                </div>
-                                <div class="input-group">
-                                    <input #dpFromDate class="form-control"
-                                        placeholder="dd/mm/yyyy"
-                                        name="dpFromDate"
-                                        [value]="formatter.format(fromDate)"
-                                        (input)="fromDate=
-                                        validateInput(fromDate,
-                                        dpFromDate.value)" style="border:
-                                        transparent !important;" />
-                                    <input #dpToDate class="form-control"
-                                        placeholder="dd/mm/yyyy" name="dpToDate"
-                                        [value]="formatter.format(toDate)"
-                                        (input)="toDate= validateInput(toDate,
-                                        dpToDate.value)" style="border:
-                                        transparent
-                                        !important;
-                                        text-align: end;" />
-                                </div>
-                            </div>
-                        </form> -->
 
-            <!-- <input type="week" name="myWeek" required id="myWeek" /> -->
            <!-- Calendar -->
-           <div class="container">
-            <div class="jumbotron">
+       
           <div class="row week-selector">
-            <div class="col-md-8">
+            <div class="">
               <div class="form-group clearfix">
-                <label class="control-label pull-left" for="weekpicker">Select Week</label>
-                <div class="col-sm-8">
+
+                <div class="">
                   <span class="icon-block ">
-                    <input type="text" class="form-control" id="weekpicker">
+                    <input type="text" placeholder="1/02/2022 - 8/02/2022" class="border-0 form-control" id="weekpicker">
                     <span class="icon-date"></span>
                   </span>
-                  <div class="week-controls">
-                    <button id="prevWeek" class="prev-week">Prev</button>
-                    <button id="nextWeek" class="next-week">Next</button>
-                  </div>
+                
                 </div>
               </div>
             </div>
           </div>
-            </div>
-          </div>
+        
+    
           <!-- --- Calander -->
 
           </div>

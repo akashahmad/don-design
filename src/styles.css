@@ -203,7 +203,14 @@ nav li:hover .teamsBorder {
         bottom: -4px;
         right: -2px;
     }
-
+    .datepicker-dropdown {
+        top: 248.781px;
+        left: 45.094px !important;
+        z-index: 10;
+        display: block;
+        width: 80% !important;
+        padding: 20px;
+    }
 
  }
 
@@ -255,6 +262,14 @@ nav li:hover .teamsBorder {
     .border-none-medium {
         border: none !important;
     }
+    .datepicker-dropdown {
+        top: 248.781px;
+        left: 78.094px !important;
+        z-index: 10;
+        display: block;
+        width: 80% !important;
+        padding: 20px;
+    }
     
 }
 
@@ -274,3 +289,18 @@ nav li:hover .teamsBorder {
     background: #e5e2e3;
     border-radius: 0;
 } 
+.table-condensed {
+    width: 100% !important;
+}
+
+.datepicker-dropdown {
+    top: 248.781px;
+    left: 469.094px;
+    z-index: 10;
+    display: block;
+    width: 25%;
+    padding: 20px;
+}
+.datepicker-switch {
+    text-align: center;
+}
