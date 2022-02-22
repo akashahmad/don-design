@@ -23,14 +23,19 @@ body {
     border: 1px solid #ffff;
 }
 
-
-
+.min-height{
+    min-height: 162px;
+}
+textarea {
+    resize: none;
+ }
 nav li:hover .teamsBorder {
     /* border-bottom: 8px solid white; */
     padding-bottom: 9px;
     color: white !important;
-
-    
+}
+.outline-none{
+    outline: none;
 }
 .teamsBorderActive {
     /* border-bottom: 8px solid white; */
@@ -87,7 +92,10 @@ nav li:hover .teamsBorder {
 /* .d-none{
   display: none !important;
 } */
-
+/* input:focus {
+    outline: none;
+    border: 1px solid #3160A8 !important;
+} */
 /*----------------- Responsive media query ---------------------*/
 
 @media (max-width: 414px) and (min-width: 280px) {
@@ -149,11 +157,11 @@ nav li:hover .teamsBorder {
         width: 64% !important;
     }
     .del-icon {
-        padding: 8px 8px 8px 8px !important;
+        padding: 10px 10px 10px 10px !important;
 
     }
     .delete-icone{
-        padding: 8px 8px 8px 13px !important;
+        padding: 10px 10px 10px 13px !important;
         right: 12px !important;
         top: 15px !important;
         position: unset !important;
@@ -250,3 +258,18 @@ nav li:hover .teamsBorder {
     
 }
 
+
+
+/*------------ week picker css ----------------*/
+
+.datepicker .datepicker-days tr td.active ~ td,
+.datepicker .datepicker-days tr td.active{
+    color: #af1623 !important;
+    background: transparent !important;
+} 
+
+.datepicker .datepicker-days tr:hover td{
+    color: #000;
+    background: #e5e2e3;
+    border-radius: 0;
+} 

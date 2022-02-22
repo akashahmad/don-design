@@ -64,11 +64,11 @@ h6 {
 
 .delete-icone {
   background-color: #f9c7ca;
-  padding: 8px 13px 13px 13px;
+  padding: 10px 13px 13px 13px;
   border-radius: 10px;
   position: absolute;
   right: 8px;
-  top: 6px;
+  top: 4px;
 }
 
 .border-rounded-14 {

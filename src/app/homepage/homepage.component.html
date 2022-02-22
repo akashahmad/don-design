@@ -113,44 +113,50 @@
     <div>
         <h4 class="pl-2 dark-gray pb-1 font-opan-sans">Tasks for this Period</h4>
         <div id="loadingImage1BORDER"
-            onclick="showImage('loadingImage1','loadingImage1BORDER')"
+            onclick="showImage('','loadingImage1BORDER')"
             class="align-items-center mb-3 task-list cursor-pointer
             border-transpairent
             paragrharph-color fs-15 position-relative hover-border custom-shadow
-            pr-32 pr-lg-0 px-4 py-3 border-radius w-100 bg-white d-flex
+            pr-32 pr-lg-0 pl-4 pr-2 px-lg-4 border-radius w-100 bg-white d-flex
             justify-content-between h-70">
-            <p class="w-85 mb-0">
-                Create and run performace tests against the admin pages</p><span
+         
+                <input type="text" value="Create and run performace tests against the admin pages" class="py-3 w-100 border-0 outline-none mb-0 pr-3 pr-lg-5"
+                id="delText1">
+            <span
                 id="loadingImage1" class="delete-icone w-16"
-                style="display: none;"><img src="../../assets/delete-icone.png"
-                    onclick="deleteRow('loadingImage1BORDER')"></span>
+                ><img src="../../assets/delete-icone.png"
+                    onclick="deleteRow('delText1')"></span>
         </div>
 
         <div id="loadingImage1BORDER2"
-            onclick="showImage('loadingImage2','loadingImage1BORDER2')"
+            onclick="showImage('','loadingImage1BORDER2')"
             class="align-items-center mb-3 task-list cursor-pointer
             border-transpairent
             paragrharph-color fs-15 position-relative hover-border custom-shadow
-            pr-32 pr-lg-0 px-4 py-3 border-radius w-100 bg-white d-flex
+            pr-32 pr-lg-0 pl-4 pr-2 px-lg-4 pr-2 px-lg-4 border-radius w-100 bg-white d-flex
             justify-content-between h-70">
-            <p class="w-85 mb-0">Send info to designer
-                for application UX</p><span id="loadingImage2" class="w-16
+
+            <input type="text" value="Send info to designer for application UX" class=" py-3 w-100 border-0 outline-none mb-0 pr-3 pr-lg-5"
+            id="delText2">
+          <span id="loadingImage2" class="w-16
                 cursor-pointer
-                delete-icone" style="display: none;"><img
+                delete-icone"><img
                     src="../../assets/delete-icone.png"
-                    onclick="deleteRow('loadingImage1BORDER2')"></span></div>
+                    onclick="deleteRow('delText2')"></span></div>
 
         <div id="loadingImage1BORDER3"
-            onclick="showImage('loadingImage3','loadingImage1BORDER3')"
+            onclick="showImage('','loadingImage1BORDER3')"
             class="align-items-center mb-3 task-list cursor-pointer
             border-transpairent
             paragrharph-color fs-15 position-relative hover-border custom-shadow
-            pr-32 pr-lg-0 px-4 py-3 border-radius w-100 bg-white d-flex
+            pr-32 pr-lg-0 pl-4 pr-2 px-lg-4  border-radius w-100 bg-white d-flex
             justify-content-between h-70">
-            <p class="w-85 mb-0">Follow up with legal on privacy and data retention policies</p><span
+            <input type="text" value="Follow up with legal on privacy and data retention policies" class="py-3 w-100 border-0 outline-none mb-0 pr-3 pr-lg-5"
+            id="delText3">
+          <span
                 id="loadingImage3" class="w-16 delete-icone"
-                style="display: none;"><img src="../../assets/delete-icone.png"
-                    onclick="deleteRow('loadingImage1BORDER3')"></span></div>
+             ><img src="../../assets/delete-icone.png"
+                    onclick="deleteRow('delText3')"></span></div>
                     
         <h4 id="loadingImage1BORDERab2" class="pl-2 pt-1 dark-gray
             font-opan-sans">Risks</h4>
@@ -159,12 +165,14 @@
             class="align-items-center mb-3 task-list cursor-pointer
             border-transpairent
             paragrharph-color fs-15 position-relative hover-border custom-shadow
-            pr-32 pr-lg-0 px-4 py-3 border-radius w-100 bg-white d-flex
+            pr-32 pr-lg-0 pl-4 pr-2 px-lg-4  border-radius w-100 bg-white d-flex
             justify-content-between h-70">
-                <p class="w-85 mb-0">No risk this week </p><span id="loadingImage4" class="w-16 delete-icone"
-                    style="display: none;"><img
+            <input type="text" value="No risk this week" class="py-3 w-100 border-0 outline-none mb-0 pr-3 pr-lg-5"
+            id="delText4">
+            <span id="loadingImage4" class="w-16 delete-icone"
+                  ><img
                         src="../../assets/delete-icone.png"
-                        onclick="deleteRow('loadingImage1BORDERad4','loadingImage1BORDERab2')"></span></div>
+                        onclick="deleteRow('delText4','loadingImage1BORDERab2')"></span></div>
         </div>
 
     </div>
@@ -225,48 +233,44 @@
         <div class="w-55 pl-0 pl-lg-4 border-start border-2 mt-5 mt-lg-0 border-none-medium">
             <div class="d-flex justify-content-between">
                 <h4 class="dark-gray font-opan-sans">Overview of this Week</h4>
-                <h4 class="pr-0 pr-lg-3 dark-gray">Status : <span class="pl-1"><img
+                <h4 class="pr-0 pr-lg-3 dark-gray mb-0">Status : <span class="pl-1"><img
                           class="status-bars"  src="../../assets/5lines.png"></span></h4>
             </div>
             <div class="d-flex mt-3 position-relative"
                 id="loadingImage1BORDERa1"
                 onclick="showImage('loadingImage5','loadingImage1BORDER5')">
                 <h6 class="pt-3 dark-gray">Ups</h6>
-                <p id="loadingImage1BORDER5" class="border-transpairent
-                    paragrharph-color w-100 py-2 fs-15 pl-4 pr-44 ml-4
-                    hover-border border-rounded-14 mb-12 font-weight-500
-                    custom-shadow">
-                    Risks
-                    have been added to the app and If there will be a huge
-                    String then this box (input field)will increase their size
-                    as we
-                    have made this now or If there will be small string as all
-                    then
-                    the size will be standard as remaining fields.</p>
-
+                <textarea rows="6" cols="50" id="delText5" class="border-transpairent
+                paragrharph-color w-100 py-2 fs-15 pl-4 pr-44 ml-4
+                hover-border border-rounded-14 mb-12 font-weight-500
+                custom-shadow min-height mb-3 outline-none">Risks have been added to the app and If there will be a huge String then this box (input field)will increase their size as we have made this now or If there will be small string as all then the size will be standard as remaining fields.
+                </textarea>
+              
                 <img id="loadingImage5"
-                    onclick="deleteRow('loadingImage1BORDERa1')"
+                    onclick="deleteRow('delText5')"
                     class="delete-icone"
-                    style="display: none;" src="../../assets/delete-icone.png"
+                    src="../../assets/delete-icone.png"
                     class="position-absolute del-icon cursor-pointer">
 
 
             </div>
             <div id="loadingImage1BORDERa2" class="position-relative d-flex
                 mt-10 align-items-center"
-                onclick="showImage('loadingImage8','loadingImage1BORDER8')">
+                onclick="showImage('','loadingImage1BORDER8')">
                 <h6 class="letter-spacing-1 mb-0 dark-gray pr-2">Down</h6>
                 <div id="loadingImage1BORDER8"
-                class="align-items-center mb-3 task-list cursor-pointer
+                class="align-items-center task-list cursor-pointer
                 border-transpairent
                 paragrharph-color fs-15 position-relative hover-border custom-shadow
-                pr-32 pr-lg-0 px-4 py-3 border-radius w-100 bg-white d-flex
+                pr-32 pr-lg-0 pl-4 pr-2 px-lg-4  border-radius w-100 bg-white d-flex
                 justify-content-between h-70">
-                    <p class="w-75 mb-0">Registration appears to be broken</p>
+                <input type="text" value="Registration appears to be broken" class="py-3 w-100 border-0 outline-none mb-0 pr-3 pr-lg-5"
+                id="delText6">
+                
                 <span class="w-16">
                 <img id="loadingImage8"
-                    onclick="deleteRow('loadingImage1BORDERa2')"
-                    style="display: none;" src="../../assets/delete-icone.png"
+                    onclick="deleteRow('delText6')"
+                   src="../../assets/delete-icone.png"
                     class="position-absolute delete-icone cursor-pointer"></span></div>
             </div>
 
