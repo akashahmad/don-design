@@ -11,7 +11,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     />
     <meta charset="utf-8" />
-    <title>AngularDashboard</title>
+    <title>zz</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -46,9 +46,28 @@
     <!---------------- weekpicker -------------------->
 
     <script>
-     
+      (function () {
+        var pushState = history.pushState;
+        var replaceState = history.replaceState;
+
+        history.pushState = function () {
+          pushState.apply(history, arguments);
+          window.dispatchEvent(new Event("pushstate"));
+          window.dispatchEvent(new Event("locationchange"));
+        };
+
+        history.replaceState = function () {
+          replaceState.apply(history, arguments);
+          window.dispatchEvent(new Event("replacestate"));
+          window.dispatchEvent(new Event("locationchange"));
+        };
+
+        window.addEventListener("popstate", function () {
+          window.dispatchEvent(new Event("locationchange"));
+        });
+      })();
+
       function deleteRow(id, id1) {
-        
         id = document.getElementById(id);
         id1 = document.getElementById(id1);
         id.classList.add("d-none");
@@ -91,68 +110,233 @@
     <script>
       ////////  Delete input text  //////////
       function deleteRow(id) {
-        
-       
         var id = (document.getElementById(id).value = "");
       }
-     
-     
     </script>
-
-
-
-
-
 
     <script>
-      // Calendar // week picker //
+      function TeamCalendar() {
+        $(document).ready(function () {
+          var startDate1, endDate1;
+          $("#weekpicker1")
+            .datepicker({
+              autoclose: true,
+              format: "mm/dd/yyyy",
+              forceParse: false,
+            })
+            .on("changeDate", function (e) {
+              //console.log(e.date);
+              var date = e.date;
+              // startDate1 = date.getDate()
+              startDate1 = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate()
+              );
+              endDate1 = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate() + 6
+              );
 
-      $(document).ready(function() {
-         // week select calender
-      var startDate,
-          endDate;
-        // console.log("weekpicker",document.getElementById(weekpicker))
-        $('#weekpicker').datepicker({
-          autoclose: true,
-          format :'mm/dd/yyyy',
-          forceParse :false
-      }).on("changeDate", function(e) {
-          //console.log(e.date);
-          var date = e.date;
-          // startDate = date.getDate()
-           startDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() );
-          endDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() +6);
-
-          $('#weekpicker').datepicker('update', startDate);
-          $('#weekpickers').val((startDate.getMonth() + 1) + '/' + startDate.getDate() + '/' +  startDate.getFullYear() + ' - ' + (endDate.getMonth() + 1) + '/' + endDate.getDate() +'/' +  endDate.getFullYear());
-        });
+              $("#weekpicker1").datepicker("update", startDate1);
+              $("#weekpicker1s").val(
+                startDate1.getMonth() +
+                  1 +
+                  "/" +
+                  startDate1.getDate() +
+                  "/" +
+                  startDate1.getFullYear() +
+                  " - " +
+                  (endDate1.getMonth() + 1) +
+                  "/" +
+                  endDate1.getDate() +
+                  "/" +
+                  endDate1.getFullYear()
+              );
+            });
           //new
-          $('#prevWeek').click(function(e){
-            var date = $('#weekpicker').datepicker('getDate');
-    
-            startDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay()- 7);
-            endDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() - 1);
-            $('#weekpicker').datepicker("setDate", new Date(startDate));
-            $('#weekpickers').val((startDate.getMonth() + 1) + '/' + startDate.getDate() + '/' +  startDate.getFullYear() + ' - ' + (endDate.getMonth() + 1) + '/' + endDate.getDate() + '/' +  endDate.getFullYear());
+          $("#prevWeek").click(function (e) {
+            var date = $("#weekpicker1").datepicker("getDate");
+
+            startDate1 = new Date(
+              date.getFullYear(),
+              date.getMonth(),
+              date.getDate() - date.getDay() - 7
+            );
+            endDate1 = new Date(
+              date.getFullYear(),
+              date.getMonth(),
+              date.getDate() - date.getDay() - 1
+            );
+            $("#weekpicker1").datepicker("setDate", new Date(startDate1));
+            $("#weekpicker1s").val(
+              startDate1.getMonth() +
+                1 +
+                "/" +
+                startDate1.getDate() +
+                "/" +
+                startDate1.getFullYear() +
+                " - " +
+                (endDate1.getMonth() + 1) +
+                "/" +
+                endDate1.getDate() +
+                "/" +
+                endDate1.getFullYear()
+            );
             return false;
           });
-          $('#nextWeek').click(function(){
-            var date = $('#weekpicker').datepicker('getDate');
-      
-             startDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay()+ 7);
-            endDate = new Date(date.getFullYear(), date.getMonth(), date.getDate() - date.getDay() + 13);
-            $('#weekpicker').datepicker("setDate", new Date(startDate));
-            $('#weekpickers').val((startDate.getMonth() + 1) + '/' + startDate.getDate() + '/' +  startDate.getFullYear() + ' - ' + (endDate.getMonth() + 1) + '/' + endDate.getDate() + '/' +  endDate.getFullYear());
+          $("#nextWeek").click(function () {
+            var date = $("#weekpicker1").datepicker("getDate");
+
+            startDate1 = new Date(
+              date.getFullYear(),
+              date.getMonth(),
+              date.getDate() - date.getDay() + 7
+            );
+            endDate1 = new Date(
+              date.getFullYear(),
+              date.getMonth(),
+              date.getDate() - date.getDay() + 13
+            );
+            $("#weekpicker1").datepicker("setDate", new Date(startDate1));
+            $("#weekpicker1s").val(
+              startDate1.getMonth() +
+                1 +
+                "/" +
+                startDate1.getDate() +
+                "/" +
+                startDate1.getFullYear() +
+                " - " +
+                (endDate1.getMonth() + 1) +
+                "/" +
+                endDate1.getDate() +
+                "/" +
+                endDate1.getFullYear()
+            );
             return false;
           });
-        })
-      
+        });
+      }
+
+      function HomeCalendar(id,inputId) {
+        var startDate, endDate;
+        $(document).ready(function () {
+          $("#weekpicker")
+            .datepicker({
+              autoclose: true,
+              format: "mm/dd/yyyy",
+              forceParse: false,
+            })
+            .on("changeDate", function (e) {
+              //console.log(e.date);
+              var date = e.date;
+              // startDate = date.getDate()
+              startDate = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate()
+              );
+              endDate = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate() + 6
+              );
+
+              $("#weekpicker").datepicker("update", startDate);
+              $("#weekpickers").val(
+                startDate.getMonth() +
+                  1 +
+                  "/" +
+                  startDate.getDate() +
+                  "/" +
+                  startDate.getFullYear() +
+                  " - " +
+                  (endDate.getMonth() + 1) +
+                  "/" +
+                  endDate.getDate() +
+                  "/" +
+                  endDate.getFullYear()
+              );
+            });
+          //new
+          $("#prevWeek").click(function (e) {
+            var date = $("#weekpicker").datepicker("getDate");
+
+            startDate = new Date(
+              date.getFullYear(),
+              date.getMonth(),
+              date.getDate() - date.getDay() - 7
+            );
+            endDate = new Date(
+              date.getFullYear(),
+              date.getMonth(),
+              date.getDate() - date.getDay() - 1
+            );
+            $("#weekpicker").datepicker("setDate", new Date(startDate));
+            $("#weekpickers").val(
+              startDate.getMonth() +
+                1 +
+                "/" +
+                startDate.getDate() +
+                "/" +
+                startDate.getFullYear() +
+                " - " +
+                (endDate.getMonth() + 1) +
+                "/" +
+                endDate.getDate() +
+                "/" +
+                endDate.getFullYear()
+            );
+            return false;
+          });
+          $("#nextWeek").click(function () {
+            var date = $("#weekpicker").datepicker("getDate");
+
+            startDate = new Date(
+              date.getFullYear(),
+              date.getMonth(),
+              date.getDate() - date.getDay() + 7
+            );
+            endDate = new Date(
+              date.getFullYear(),
+              date.getMonth(),
+              date.getDate() - date.getDay() + 13
+            );
+            $("#weekpicker").datepicker("setDate", new Date(startDate));
+            $("#weekpickers").val(
+              startDate.getMonth() +
+                1 +
+                "/" +
+                startDate.getDate() +
+                "/" +
+                startDate.getFullYear() +
+                " - " +
+                (endDate.getMonth() + 1) +
+                "/" +
+                endDate.getDate() +
+                "/" +
+                endDate.getFullYear()
+            );
+            return false;
+          });
+        });
+      }
+
+      window.addEventListener("locationchange", function () {
+        if (window.location.pathname === "/my-teams") {
+          setTimeout(() => {
+            TeamCalendar();
+           
+          }, 1000);
+        }
+        if (window.location.pathname === "/my-status") {
+          setTimeout(() => {
+            HomeCalendar();
+           
+          }, 1000);
+        }
+      });
     </script>
-
-  <script>
-    
-  </script>
-
-
   </body>
 </html>
