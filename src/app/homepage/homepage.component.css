@@ -64,11 +64,11 @@ h6 {
 
 .delete-icone {
   background-color: #f9c7ca;
-  padding: 10px 13px 13px 13px;
+  padding: 13px 13px 13px 13px;
   border-radius: 10px;
   position: absolute;
   right: 8px;
-  top: 4px;
+  top: 5px;
 }
 
 .border-rounded-14 {
@@ -221,3 +221,6 @@ input[_ngcontent-xxc-c19]:checked + .slider[_ngcontent-xxc-c19] {
 .my-status:hover {
   opacity: unset !important;
 }
+
+
+/*-------------------------*/

@@ -6,64 +6,33 @@
                 <div class="d-flex justify-content-between pb-2">
                     <h4 class="font-weight-700 font-opan-sans">Select Week</h4>
                     <button class="p-0 btn btn-outline-secondary calendar"
-                        (click)="datepicker.toggle()" type="button">
-                        <img class="select-box calender-box"
+                        >
+                        <img id="weekpicker" class="select-box calender-box"
                             src="../../assets/percentage.svg">
                     </button>
 
                 </div>
-                <div>
-                    <form class="row row-cols-sm-auto">
-                        <div class="col-12 pl-0 pr-0">
-                            <div class="dp-hidden position-absolute">
-                                <div class="input-group">
-                                    <input name="datepicker"
-                                        class="form-control" ngbDatepicker
-                                        #datepicker="ngbDatepicker"
-                                        [autoClose]="'outside'"
-                                        (dateSelect)="onDateSelection($event)"
-                                        [displayMonths]="2" [dayTemplate]="t"
-                                        outsideDays="hidden"
-                                        [startDate]="fromDate!" tabindex="-1" />
-                                    <ng-template #t let-date
-                                        let-focused="focused">
-                                        <span class="custom-day"
-                                            [class.focused]="focused"
-                                            [class.range]="isRange(date)"
-                                            [class.faded]="isHovered(date) ||
-                                            isInside(date)"
-                                            (mouseenter)="hoveredDate= date"
-                                            (mouseleave)="hoveredDate= null">
-                                            {{ date.day }}
-                                        </span>
-                                    </ng-template>
-                                </div>
-                            </div>
-                            <div class="input-group">
+                    <!-- Calendar -->
+       
+          <div class="row week-selector">
+            <div class="">
+              <div class="form-group clearfix">
 
-                                <input #dpFromDate class="form-control
-                                    datepicker" placeholder="dd/mm/yyyy"
-                                    name="dpFromDate"
-                                    [value]="formatter.format(fromDate)"
-                                    (input)="fromDate= validateInput(fromDate,
-                                    dpFromDate.value)"
-                                    style="border: transparent !important;" />
-                                <input #dpToDate class="form-control datepicker"
-                                    placeholder="dd/mm/yyyy" name="dpToDate"
-                                    [value]="formatter.format(toDate)"
-                                    (input)="toDate= validateInput(toDate,
-                                    dpToDate.value)"
-                                    style="border: transparent !important;
-                                    text-align: end;" />
-                            </div>
-                        </div>
-                    </form>
+                <div class="">
+                  <span class="icon-block ">
+                    <input type="text" placeholder="1/02/2022 - 8/02/2022" class="cursor-pointer border-0 form-control" id="weekpickers">
+                    <span class="icon-date"></span>
+                  </span>
+                
                 </div>
-                <!-- <div class="d-flex justify-content-between">
-
-
-                </div> -->
+              </div>
             </div>
+          </div>
+        
+    
+          <!-- --- Calander -->
+            </div>
+          
         </div>
         <div class="colloumn-2">
             <h3 class="pb-2 pl-1 dark-gray font-opan-sans">First Admin</h3>
@@ -123,8 +92,8 @@
                 <input type="text" value="Create and run performace tests against the admin pages" class="py-3 w-100 border-0 outline-none mb-0 pr-3 pr-lg-5"
                 id="delText1">
             <span
-                id="loadingImage1" class="delete-icone w-16"
-                ><img src="../../assets/delete-icone.png"
+                id="loadingImage1" class="w-16"
+                ><img class="delete-icone" src="../../assets/delete-icone.png"
                     onclick="deleteRow('delText1')"></span>
         </div>
 
@@ -140,7 +109,7 @@
             id="delText2">
           <span id="loadingImage2" class="w-16
                 cursor-pointer
-                delete-icone"><img
+               "><img class=" delete-icone"
                     src="../../assets/delete-icone.png"
                     onclick="deleteRow('delText2')"></span></div>
 
@@ -154,8 +123,8 @@
             <input type="text" value="Follow up with legal on privacy and data retention policies" class="py-3 w-100 border-0 outline-none mb-0 pr-3 pr-lg-5"
             id="delText3">
           <span
-                id="loadingImage3" class="w-16 delete-icone"
-             ><img src="../../assets/delete-icone.png"
+                id="loadingImage3" class="w-16"
+             ><img class=" delete-icone" src="../../assets/delete-icone.png"
                     onclick="deleteRow('delText3')"></span></div>
                     
         <h4 id="loadingImage1BORDERab2" class="pl-2 pt-1 dark-gray
@@ -169,8 +138,8 @@
             justify-content-between h-70">
             <input type="text" value="No risk this week" class="py-3 w-100 border-0 outline-none mb-0 pr-3 pr-lg-5"
             id="delText4">
-            <span id="loadingImage4" class="w-16 delete-icone"
-                  ><img
+            <span id="loadingImage4" class="w-16"
+                  ><img class=" delete-icone"
                         src="../../assets/delete-icone.png"
                         onclick="deleteRow('delText4','loadingImage1BORDERab2')"></span></div>
         </div>
