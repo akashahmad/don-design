@@ -170,7 +170,7 @@ nav li:hover .teamsBorder {
         height: 40px;
     }
     .dropdown-menu {
-        left: -128px !important;
+        /* left: -128px !important; */
     }
     .h-70{
         height: 70px !important;
@@ -288,7 +288,7 @@ nav li:hover .teamsBorder {
 
 .datepicker .datepicker-days tr td.active ~ td,
 .datepicker .datepicker-days tr td.active{
-    color: #af1623 !important;
+    color: #000;
     background: transparent !important;
 } 
 
@@ -302,14 +302,19 @@ nav li:hover .teamsBorder {
 }
 
 .datepicker-dropdown {
-    top: 251.578px !important;
-    left: unset;
+    top: 246.578px !important;
+    /* left: 465.891px !important; */
     z-index: 10;
+    border-radius: 0.5rem;
     display: block;
     width: 25%;
     padding: 20px;
     cursor: pointer;
+    border-color: #3160a8;
+    box-shadow: 0 0.5rem 1rem rgb(112, 144, 176, 90%) !important;
+
 }
+
 #weekpicker {
     margin: 0 auto !important;
 }
@@ -319,3 +324,4 @@ nav li:hover .teamsBorder {
 .form-group  {
     margin-bottom: 0;
 }
+

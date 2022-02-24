@@ -224,3 +224,6 @@ input[_ngcontent-xxc-c19]:checked + .slider[_ngcontent-xxc-c19] {
 
 
 /*-------------------------*/
+.dropdown-menu {
+  left: 61px !important;
+}
