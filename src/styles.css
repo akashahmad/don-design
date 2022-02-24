@@ -325,3 +325,8 @@ nav li:hover .teamsBorder {
     margin-bottom: 0;
 }
 
+#home-calendar-col .datepicker-dropdown{
+width: 100%!important;
+top: 160.578px !important;
+left: 0!important;
+}
