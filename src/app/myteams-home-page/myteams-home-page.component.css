@@ -52,7 +52,13 @@ h6 {
   width: 45%;
 }
 .custom-shadow {
-  box-shadow: 0 0.5rem 1rem rgba(112, 144, 176, 0.12) !important;
+  box-shadow: 0 0.5rem 1rem rgba(112, 144, 176, 0.12);
+  
+}
+.custom-shadow:hover {
+  cursor: pointer;
+  box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2);
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 .btn-blue {
   color: rgb(78, 78, 245) !important;

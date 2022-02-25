@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
@@ -30,7 +29,6 @@ textarea {
   resize: none;
 }
 nav li:hover .teamsBorder {
-  /* border-bottom: 8px solid white; */
   padding-bottom: 9px;
   color: white !important;
 }
@@ -38,7 +36,6 @@ nav li:hover .teamsBorder {
   outline: none;
 }
 .teamsBorderActive {
-  /* border-bottom: 8px solid white; */
   padding-bottom: 9px;
   color: white;
 }
@@ -88,13 +85,6 @@ nav li:hover .teamsBorder {
   box-shadow: 0 0 0 0.25rem rgb(250, 255, 255) !important;
 }
 
-/* .d-none{
-  display: none !important;
-} */
-/* input:focus {
-    outline: none;
-    border: 1px solid #3160A8 !important;
-} */
 /*----------------- Responsive media query ---------------------*/
 
 @media (max-width: 414px) and (min-width: 280px) {
@@ -126,9 +116,7 @@ nav li:hover .teamsBorder {
   .w-55 {
     width: 100% !important;
   }
-  /* .pr-32 {
-        padding-right: 32px !important;
-    } */
+
   .ngb-dp-content {
     flex-wrap: wrap !important;
   }
@@ -166,13 +154,9 @@ nav li:hover .teamsBorder {
   .mobile-avatar-h {
     height: 40px;
   }
-  .dropdown-menu {
-    /* left: -128px !important; */
-  }
   .h-70 {
     height: 70px !important;
   }
-
   .w-16 {
     width: 16%;
   }
@@ -213,7 +197,6 @@ nav li:hover .teamsBorder {
   #weekpickers {
     margin: 0 auto !important;
   }
-  
 }
 
 @media (max-width: 912px) and (min-width: 415px) {
@@ -231,20 +214,16 @@ nav li:hover .teamsBorder {
   }
   .colloumn-1 {
     width: 50% !important;
-    /* padding: 0px 30px 0px 30px !important; */
   }
   .colloumn-2 {
     width: 50% !important;
-    /* padding: 30px 30px 0px 30px !important; */
   }
   .colloumn-3 {
     width: 50% !important;
-    /* padding: 30px 30px 0px 30px !important; */
     padding-left: 0 !important;
   }
   .colloumn-4 {
     width: 50% !important;
-    /* padding: 30px 30px 0px 30px !important; */
   }
   .flex-wrap {
     display: flex !important;
@@ -324,29 +303,19 @@ nav li:hover .teamsBorder {
   left: 0 !important;
 }
 
-.card {
-    text-align: unset !important;
-    margin-right: unset !important;
-    margin-left: unset !important;
-    width: unset !important;
-    height: unset !important;
-    -webkit-transition: 0.6s ease-out;
-    border: unset !important;
-  }
+.card-animation:hover {
+  cursor: pointer;
+  box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2);
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+.delete-icone:hover {
+  box-shadow: 1px 1px 8px 2px #c26d6d;
+  -webkit-transition: box-shadow 0.3s ease-in;
+  -webkit-transition: box-shadow 0.3s ease-out;
+}
 
-  .card-animation:hover {
-    cursor: pointer;
-    box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2);
-    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
-  }
-  .delete-icone:hover {
-    box-shadow: 1px 1px 8px 2px #C26D6D;
-    -webkit-transition: box-shadow 0.3s ease-in;
-    -webkit-transition:  box-shadow .3s ease-out;
-  }
-
-  .del-icon:hover {
-    box-shadow: 1px 1px 8px 2px #C26D6D;
-    -webkit-transition: box-shadow 0.3s ease-in;
-    -webkit-transition:  box-shadow .3s ease-out;
-  }
+.del-icon:hover {
+  box-shadow: 1px 1px 8px 2px #c26d6d;
+  -webkit-transition: box-shadow 0.3s ease-in;
+  -webkit-transition: box-shadow 0.3s ease-out;
+}
