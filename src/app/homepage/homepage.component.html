@@ -2,8 +2,8 @@
     <div class="flex-wrap row d-flex justify-content-center flex-lg-row">
         <div class="colloumn-1 col-lg-12 pl-0" id="home-calendar-col"> 
             <h3 class="pb-2 pl-1 dark-gray font-opan-sans">Select Date</h3>
-            <div class="card-1 border border-white bg-white px-4 py-3">
-                <div class="position-relative d-flex justify-content-between align-items-center">
+            <div class="card-animation card-1 border border-white bg-white px-4 py-3">
+                <div class="position-relative pb-3 d-flex justify-content-between align-items-center">
                     <h4 class="font-weight-700 font-opan-sans dark-gray mb-0">Select Week</h4>
                     <button class="p-0 btn btn-outline-secondary calendar"
                         >
@@ -36,8 +36,8 @@
         </div>
         <div class="colloumn-2">
             <h3 class="pb-2 pl-1 dark-gray font-opan-sans">First Admin</h3>
-            <div class="cursor-pointer card1 border border-white bg-white p-4">
-                <div class="d-flex justify-content-between pb-2">
+            <div class="card-animation cursor-pointer card1 border border-white bg-white p-4">
+                <div class="d-flex justify-content-between pb-3">
                     <h5 class="opacity-75 font-opan-sans stauts-subheading">Completed
                         Over Time</h5>
                 </div>
@@ -50,8 +50,8 @@
         </div>
         <div class="thirdColumn colloumn-3">
             <h3 class="pb-2 pl-1 d-none">Select Date</h3>
-            <div class="cursor-pointer card1 border border-white bg-white p-4">
-                <div class="d-flex justify-content-between pb-2">
+            <div class="card-animation cursor-pointer card1 border border-white bg-white p-4">
+                <div class="d-flex justify-content-between pb-3">
                     <h5 class="opacity-75 font-opan-sans stauts-subheading">Completed
                         During the last Three Months</h5>
                 </div>
@@ -63,8 +63,8 @@
         </div>
         <div class="thirdColumn colloumn-4 pr-0">
             <h3 class="pb-2 pl-1 d-none">Select Date</h3>
-            <div class="cursor-pointer card1 border border-white bg-white p-4">
-                <div class="d-flex justify-content-between pb-2">
+            <div class="card-animation cursor-pointer card1 border border-white bg-white p-4">
+                <div class="d-flex justify-content-between pb-3">
                     <h5 class="opacity-75 font-opan-sans stauts-subheading">Completed
                         This Week</h5>
                 </div>
@@ -89,12 +89,12 @@
             pr-32 pr-lg-0 pl-4 pr-2 px-lg-4 border-radius w-100 bg-white d-flex
             justify-content-between h-70">
          
-                <input type="text" value="Create and run performace tests against the admin pages" class="py-3 w-100 border-0 outline-none mb-0 pr-3 pr-lg-5"
+                <input type="text" value="Create and run performance tests against the admin pages" class="remove-text py-3 w-100 border-0 outline-none mb-0 pr-3 pr-lg-5"
                 id="delText1">
             <span
                 id="loadingImage1" class="w-16"
                 ><img class="delete-icone" src="../../assets/delete-icone.png"
-                    onclick="deleteRow('delText1')"></span>
+                onclick="deleteRow('delText1')"></span>
         </div>
 
         <div id="loadingImage1BORDER2"
@@ -216,7 +216,7 @@
                 </textarea>
               
                 <img id="loadingImage5"
-                    onclick="deleteRow('delText5')"
+                    onclick="deleteRow('delText5','loadingImage1BORDER5')"
                     class="delete-icone"
                     src="../../assets/delete-icone.png"
                     class="position-absolute del-icon cursor-pointer">
